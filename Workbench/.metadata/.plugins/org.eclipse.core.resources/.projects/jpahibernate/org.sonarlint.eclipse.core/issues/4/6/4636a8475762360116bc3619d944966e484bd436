@@ -1,0 +1,9 @@
+
+xsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¡Ÿ›H½RMAJORZ
+CODE_SMELL
+xsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(’ÚŸÁH¾RMAJORZ
+CODE_SMELL
+Xsquid:S1148!"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿH¿RMINORZVULNERABILITY
+e
+squid:S106"9Replace this use of System.out or System.err by a logger.(°í”–HÀRMAJORZ
+CODE_SMELL

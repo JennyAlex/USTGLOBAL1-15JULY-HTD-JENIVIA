@@ -1,0 +1,42 @@
+
+j
+squid:S106:"9Replace this use of System.out or System.err by a logger.(ù˙ŸÏ˝ˇˇˇˇHê+RMAJORZ
+CODE_SMELL
+j
+squid:S106*"9Replace this use of System.out or System.err by a logger.(¢Õ¡∫˙ˇˇˇˇHë+RMAJORZ
+CODE_SMELL
+j
+squid:S1066"9Replace this use of System.out or System.err by a logger.(°¸ÖÃ˝ˇˇˇˇHí+RMAJORZ
+CODE_SMELL
+d
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ó“äHHì+RMAJORZ
+CODE_SMELL
+ysquid:S1192"JDefine a constant instead of duplicating this literal "For \\d+:" 3 times.(Ó“äHHî+RCRITICALZ
+CODE_SMELL
+d
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ó“äHHï+RMAJORZ
+CODE_SMELL
+j
+squid:S106""9Replace this use of System.out or System.err by a logger.(¥›◊ö˝ˇˇˇˇHñ+RMAJORZ
+CODE_SMELL
+j
+squid:S106&"9Replace this use of System.out or System.err by a logger.(·¢›î˙ˇˇˇˇHó+RMAJORZ
+CODE_SMELL
+j
+squid:S106"9Replace this use of System.out or System.err by a logger.(ØÒ¡ﬁ¯ˇˇˇˇHò+RMAJORZ
+CODE_SMELL
+e
+squid:S106>"9Replace this use of System.out or System.err by a logger.(Æπ∆‰Hô+RMAJORZ
+CODE_SMELL
+d
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ó“äHHö+RMAJORZ
+CODE_SMELL
+e
+squid:S106"9Replace this use of System.out or System.err by a logger.(∫Ä≠±Hõ+RMAJORZ
+CODE_SMELL
+e
+squid:S1062"9Replace this use of System.out or System.err by a logger.(∆ƒ°ŒHú+RMAJORZ
+CODE_SMELL
+j
+squid:S106."9Replace this use of System.out or System.err by a logger.(î˘È‡ˇˇˇˇˇHù+RMAJORZ
+CODE_SMELL

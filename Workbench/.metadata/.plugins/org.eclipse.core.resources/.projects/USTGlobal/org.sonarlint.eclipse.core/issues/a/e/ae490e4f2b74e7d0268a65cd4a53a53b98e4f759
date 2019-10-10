@@ -1,0 +1,40 @@
+
+y$squid:AssignmentInSubExpressionCheck".Extract the assignment out of this expression.(¡×ù¡øÿÿÿÿHĞ*RMAJORZ
+CODE_SMELL
+gsquid:S1854"5Remove this useless assignment to local variable "a".(ƒİõÆûÿÿÿÿHÑ*RMAJORZ
+CODE_SMELL
+hsquid:S1854"6Remove this useless assignment to local variable "s2".(¡×ù¡øÿÿÿÿHÒ*RMAJORZ
+CODE_SMELL
+hsquid:S1854"6Remove this useless assignment to local variable "s2".(ÈÇÓøÿÿÿÿHÓ*RMAJORZ
+CODE_SMELL
+j
+squid:S106
+"9Replace this use of System.out or System.err by a logger.(Êÿ„ÒúÿÿÿÿHÔ*RMAJORZ
+CODE_SMELL
+e
+squid:S106"9Replace this use of System.out or System.err by a logger.(ùÛÙçHÕ*RMAJORZ
+CODE_SMELL
+e
+squid:S106"9Replace this use of System.out or System.err by a logger.(ºÊ…HÖ*RMAJORZ
+CODE_SMELL
+j
+squid:S106"9Replace this use of System.out or System.err by a logger.(¡×ù¡øÿÿÿÿH×*RMAJORZ
+CODE_SMELL
+e
+squid:S106"9Replace this use of System.out or System.err by a logger.(ÅÑ÷HØ*RMAJORZ
+CODE_SMELL
+e
+squid:S106"9Replace this use of System.out or System.err by a logger.(–Ä¹HÙ*RMAJORZ
+CODE_SMELL
+e
+squid:S106"9Replace this use of System.out or System.err by a logger.(Áß‡ÜHÚ*RMAJORZ
+CODE_SMELL
+e
+squid:S106"9Replace this use of System.out or System.err by a logger.(ÅÑ÷HÛ*RMAJORZ
+CODE_SMELL
+d
+squid:S106"9Replace this use of System.out or System.err by a logger.(šµÉoHÜ*RMAJORZ
+CODE_SMELL
+j
+squid:S106"9Replace this use of System.out or System.err by a logger.(ƒİõÆûÿÿÿÿHİ*RMAJORZ
+CODE_SMELL

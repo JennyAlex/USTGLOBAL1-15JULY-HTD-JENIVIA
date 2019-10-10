@@ -1,0 +1,83 @@
+
+o"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(Âúïi8‘¾š—Õ-HÖ&RCRITICALZ
+CODE_SMELL
+q
+squid:S106|"9Replace this use of System.out or System.err by a logger.(ÅÈõÎüÿÿÿÿ8¨ĞïšÕ-H×&RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLine,"<This block of commented-out lines of code should be removed.(©®‘å8ÜŒÓšÕ-HØ&RMAJORZ
+CODE_SMELL
+_squid:S1148s"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Â—Õ-HÙ&RMINORZVULNERABILITY
+l
+squid:S106d"9Replace this use of System.out or System.err by a logger.(ÁÎ«ä8­Ü½›Õ-HÚ&RMAJORZ
+CODE_SMELL
+l
+squid:S106a"9Replace this use of System.out or System.err by a logger.(¿Ä™¡8­Ü½›Õ-HÛ&RMAJORZ
+CODE_SMELL
+Œsquid:S1192("PDefine a constant instead of duplicating this literal "TestPersistence" 4 times.(È½ô™ûÿÿÿÿ8¹’—šÕ-HÜ&RCRITICALZ
+CODE_SMELL
+„squid:S13019"KReplace this "switch" statement by "if" statements to increase readability.(›‡ã¿øÿÿÿÿ8¾§ß–Õ-Hİ&RMINORZ
+CODE_SMELL
+q
+squid:S106U"9Replace this use of System.out or System.err by a logger.(Ú¤ª¼şÿÿÿÿ8”à‘™Õ-HŞ&RMAJORZ
+CODE_SMELL
+q
+squid:S106<"9Replace this use of System.out or System.err by a logger.(Âª–Ñşÿÿÿÿ8…å—Õ-Hß&RMAJORZ
+CODE_SMELL
+q
+squid:S1065"9Replace this use of System.out or System.err by a logger.(âÚ’“ùÿÿÿÿ8İç˜Õ-Hà&RMAJORZ
+CODE_SMELL
+l
+squid:S106Z"9Replace this use of System.out or System.err by a logger.(Ñæï­8­Ü½›Õ-Há&RMAJORZ
+CODE_SMELL
+m
+squid:S106ˆ"9Replace this use of System.out or System.err by a logger.(¿Ä™¡8¨ĞïšÕ-Hâ&RMAJORZ
+CODE_SMELL
+m
+squid:S106‹"9Replace this use of System.out or System.err by a logger.(ÁÎ«ä8¨ĞïšÕ-Hã&RMAJORZ
+CODE_SMELL
+
+squid:S128:"LEnd this switch case with an unconditional break, return or throw statement.(ßæâÓ8ÅÆ‚™Õ-Hä&RBLOCKERZ
+CODE_SMELL
+m
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ñæï­8¨ĞïšÕ-Hå&RMAJORZ
+CODE_SMELL
+q
+squid:S106T"9Replace this use of System.out or System.err by a logger.(ñ• ÿÿÿÿÿ8”à‘™Õ-Hæ&RMAJORZ
+CODE_SMELL
+_squid:S11482"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8İç˜Õ-Hç&RMINORZVULNERABILITY
+q
+squid:S106"9Replace this use of System.out or System.err by a logger.(ã“êøÿÿÿÿ8ª¤é–Õ-Hè&RMAJORZ
+CODE_SMELL
+q
+squid:S106$"9Replace this use of System.out or System.err by a logger.(Ç²’ïşÿÿÿÿ8”à‘™Õ-Hé&RMAJORZ
+CODE_SMELL
+q
+squid:S1064"9Replace this use of System.out or System.err by a logger.(¿˜¿íüÿÿÿÿ8‘¾š—Õ-Hê&RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineI"<This block of commented-out lines of code should be removed.(©®‘å8‰œÿšÕ-Hë&RMAJORZ
+CODE_SMELL
+~squid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(Âúïi8‘¾š—Õ-Hì&RMINORZ
+CODE_SMELL
+‹squid:S1192$"ODefine a constant instead of duplicating this literal "Enter password" 3 times.(Ç²’ïşÿÿÿÿ8­Ü½›Õ-Hí&RCRITICALZ
+CODE_SMELL
+`squid:S1148š"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¨ĞïšÕ-Hî&RMINORZVULNERABILITY
+l
+squid:S106"9Replace this use of System.out or System.err by a logger.(˜½ Æ8ª¤é–Õ-Hï&RMAJORZ
+CODE_SMELL
+l
+squid:S106:"9Replace this use of System.out or System.err by a logger.(ßæâÓ8âƒ†™Õ-Hğ&RMAJORZ
+CODE_SMELL
+u"squid:SwitchLastCaseIsDefaultCheck9""Add a default case to this switch.(›‡ã¿øÿÿÿÿ8¾§ß–Õ-Hñ&RCRITICALZ
+CODE_SMELL
+squid:CommentedOutCodeLine@"<This block of commented-out lines of code should be removed.(²¨ÑÃ8öÙÛšÕ-Hò&RMAJORZ
+CODE_SMELL
+q
+squid:S106"9Replace this use of System.out or System.err by a logger.(¦Üöóÿÿÿÿÿ8©‹ë–Õ-Hó&RMAJORZ
+CODE_SMELL
+_squid:S1148O"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¹’—šÕ-Hô&RMINORZVULNERABILITY
+l
+squid:S106!"9Replace this use of System.out or System.err by a logger.(’À®8µÎ˜Õ-Hõ&RMAJORZ
+CODE_SMELL
+l
+squid:S106"9Replace this use of System.out or System.err by a logger.(»Ğ¤Ÿ8ª¤é–Õ-Hö&RMAJORZ
+CODE_SMELL

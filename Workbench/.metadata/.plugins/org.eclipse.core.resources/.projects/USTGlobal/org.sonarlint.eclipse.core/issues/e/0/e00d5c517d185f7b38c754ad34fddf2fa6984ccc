@@ -1,0 +1,11 @@
+
+Nsquid:S1643"Use a StringBuilder instead.( öÈþþÿÿÿÿHˆ+RMINORZ
+CODE_SMELL
+j
+squid:S106	"9Replace this use of System.out or System.err by a logger.(ªŠž™ùÿÿÿÿH‰+RMAJORZ
+CODE_SMELL
+j
+squid:S106"9Replace this use of System.out or System.err by a logger.(ŸÙšˆþÿÿÿÿHŠ+RMAJORZ
+CODE_SMELL
+xsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(àÔê³H‹+RMAJORZ
+CODE_SMELL

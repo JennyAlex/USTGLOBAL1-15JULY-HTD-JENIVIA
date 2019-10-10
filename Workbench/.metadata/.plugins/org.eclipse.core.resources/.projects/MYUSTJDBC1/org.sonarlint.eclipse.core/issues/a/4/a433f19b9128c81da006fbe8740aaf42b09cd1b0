@@ -1,0 +1,20 @@
+
+{squid:S2095&"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ˆ àíøÿÿÿÿ8ªˆşÔ-H—(RBLOCKERZBUG
+usquid:S1075"ARefactor your code to get this URI from a customizable parameter.(œÒİü8ÄãÄıÔ-H˜(RMINORZ
+CODE_SMELL
+q
+squid:S106)"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8Ñ¾ şÔ-H™(RMAJORZ
+CODE_SMELL
+k
+squid:S106!"9Replace this use of System.out or System.err by a logger.(Ó÷îZ8²·ñıÔ-Hš(RMAJORZ
+CODE_SMELL
+`squid:S1481"'Remove this unused "sc" local variable.(ğÛ²¸øÿÿÿÿ8¦°ŞıÔ-H›(RMINORZ
+CODE_SMELL
+_squid:S11484"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÄãÄıÔ-Hœ(RMINORZVULNERABILITY
+wsquid:S2095 "HUse try-with-resources or close this "Connection" in a "finally" clause.(¬Öúµ8²·ñıÔ-H(RBLOCKERZBUG
+jsquid:S11353"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ8ÄãÄıÔ-H(RINFOZ
+CODE_SMELL
+ƒsquid:S2095%"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ºûä¤ûÿÿÿÿ8ªˆşÔ-HŸ(RBLOCKERZBUG
+|squid:S2095"HUse try-with-resources or close this "FileReader" in a "finally" clause.(Ú•ß¾ûÿÿÿÿ8®£ÆıÔ-H (RBLOCKERZBUG
+osquid:S1854"6Remove this useless assignment to local variable "sc".(ğÛ²¸øÿÿÿÿ8¦°ŞıÔ-H¡(RMAJORZ
+CODE_SMELL

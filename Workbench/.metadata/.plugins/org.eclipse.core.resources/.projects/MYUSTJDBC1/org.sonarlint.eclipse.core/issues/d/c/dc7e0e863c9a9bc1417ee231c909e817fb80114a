@@ -1,0 +1,33 @@
+
+|squid:S2095)"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ò‡£´ÿÿÿÿÿHÖRBLOCKERZBUG
+usquid:S2095"HUse try-with-resources or close this "FileReader" in a "finally" clause.(Ú•ß¾ûÿÿÿÿH×RBLOCKERZBUG
+psquid:S2095""HUse try-with-resources or close this "Connection" in a "finally" clause.(¬ÖúµHØRBLOCKERZBUG
+Xsquid:S1148<"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿHÙRMINORZVULNERABILITY
+_squid:S4925"-Remove this "Class.forName()", it is useless.(¹µÖÁüÿÿÿÿHÚRMAJORZ
+CODE_SMELL
+e
+squid:S106"9Replace this use of System.out or System.err by a logger.(ÀÂHÛRMAJORZ
+CODE_SMELL
+nsquid:S1075"ARefactor your code to get this URI from a customizable parameter.(œÒÝüHÜRMINORZ
+CODE_SMELL
+j
+squid:S106#"9Replace this use of System.out or System.err by a logger.(äƒçãÿÿÿÿÿHÝRMAJORZ
+CODE_SMELL
+j
+squid:S106$"9Replace this use of System.out or System.err by a logger.(ª“ÿÏüÿÿÿÿHÞRMAJORZ
+CODE_SMELL
+e
+squid:S106*"9Replace this use of System.out or System.err by a logger.(ä¡Í²HßRMAJORZ
+CODE_SMELL
+j
+squid:S106,"9Replace this use of System.out or System.err by a logger.(™ÞžüûÿÿÿÿHàRMAJORZ
+CODE_SMELL
+j
+squid:S1063"9Replace this use of System.out or System.err by a logger.(™œ‡õýÿÿÿÿHáRMAJORZ
+CODE_SMELL
+e
+squid:S1066"9Replace this use of System.out or System.err by a logger.(–¶ËŠHâRMAJORZ
+CODE_SMELL
+e
+squid:S106;"9Replace this use of System.out or System.err by a logger.(–¶ËŠHãRMAJORZ
+CODE_SMELL

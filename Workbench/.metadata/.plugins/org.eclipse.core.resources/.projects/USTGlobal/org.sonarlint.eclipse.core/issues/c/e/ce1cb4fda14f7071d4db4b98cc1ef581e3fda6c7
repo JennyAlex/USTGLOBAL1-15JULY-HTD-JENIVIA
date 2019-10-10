@@ -1,0 +1,17 @@
+
+gsquid:UselessImportCheck".Remove this unused import 'java.util.HashSet'.(Ê‚êXH…*RMINORZ
+CODE_SMELL
+‰squid:S1450
+"WRemove the "password" field and declare it as a local variable in the relevant methods.(œãë­úÿÿÿÿH†*RMINORZ
+CODE_SMELL
+‹squid:S1210L"YOverride "equals(Object obj)" to comply with the contract of the "compareTo(T o)" method.(â€şÿÿÿÿH‡*RMINORZ
+CODE_SMELL
+±squid:S1186E"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Çµí‘Hˆ*RCRITICALZ
+CODE_SMELL
+‚squid:S00116"ORename this field "Name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(É¬­ÁøÿÿÿÿH‰*RMINORZ
+CODE_SMELL
+^squid:S1068
+",Remove this unused "password" private field.(œãë­úÿÿÿÿHŠ*RMAJORZ
+CODE_SMELL
+}squid:CommentedOutCodeLine9"<This block of commented-out lines of code should be removed.(ÿ•­ÖúÿÿÿÿH‹*RMAJORZ
+CODE_SMELL

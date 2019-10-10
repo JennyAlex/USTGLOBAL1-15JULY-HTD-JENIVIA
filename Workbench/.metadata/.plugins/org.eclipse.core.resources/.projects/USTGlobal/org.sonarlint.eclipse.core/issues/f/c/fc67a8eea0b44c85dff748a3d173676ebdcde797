@@ -1,0 +1,43 @@
+
+e
+squid:S106"9Replace this use of System.out or System.err by a logger.(ï†âËH½)RMAJORZ
+CODE_SMELL
+Usquid:S1172
+"(Remove this unused method parameter "d".(›Â¬ØH¾)RMAJORZ
+CODE_SMELL
+d
+squid:S106"9Replace this use of System.out or System.err by a logger.(¦å§H¿)RMAJORZ
+CODE_SMELL
+Usquid:S1172"(Remove this unused method parameter "s".(Óæ ÛHÀ)RMAJORZ
+CODE_SMELL
+e
+squid:S106"9Replace this use of System.out or System.err by a logger.(ÛûõËHÁ)RMAJORZ
+CODE_SMELL
+Xsquid:S1172"&Remove these unused method parameters.(Ë¼µÄıÿÿÿÿHÂ)RMAJORZ
+CODE_SMELL
+e
+squid:S106"9Replace this use of System.out or System.err by a logger.(ß„á£HÃ)RMAJORZ
+CODE_SMELL
+Xsquid:S1172"&Remove these unused method parameters.(àº™ÿıÿÿÿÿHÄ)RMAJORZ
+CODE_SMELL
+e
+squid:S106"9Replace this use of System.out or System.err by a logger.(º½Ã HÅ)RMAJORZ
+CODE_SMELL
+j
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ó’šÜıÿÿÿÿHÆ)RMAJORZ
+CODE_SMELL
+j
+squid:S106"9Replace this use of System.out or System.err by a logger.(áçÉúÿÿÿÿHÇ)RMAJORZ
+CODE_SMELL
+e
+squid:S106 "9Replace this use of System.out or System.err by a logger.(õáÕHÈ)RMAJORZ
+CODE_SMELL
+e
+squid:S106""9Replace this use of System.out or System.err by a logger.(”ÿˆ²HÉ)RMAJORZ
+CODE_SMELL
+j
+squid:S106$"9Replace this use of System.out or System.err by a logger.(ü¶¸øÿÿÿÿHÊ)RMAJORZ
+CODE_SMELL
+j
+squid:S106&"9Replace this use of System.out or System.err by a logger.(»ÂİöÿÿÿÿÿHË)RMAJORZ
+CODE_SMELL

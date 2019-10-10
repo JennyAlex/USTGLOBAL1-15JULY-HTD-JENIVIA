@@ -1,0 +1,7 @@
+
+Xsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿH¹RMINORZVULNERABILITY
+lsquid:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€HºRMAJORZBUG
+gsquid:S2209"5Change this instance-reference to a static reference.(—õüÿÿÿÿH»RMAJORZ
+CODE_SMELL
+csquid:S1135"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿH¼RINFOZ
+CODE_SMELL

@@ -1,0 +1,27 @@
+
+±squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Çµí‘Hä)RCRITICALZ
+CODE_SMELL
+e
+squid:S106"9Replace this use of System.out or System.err by a logger.(èœÅˆHå)RMAJORZ
+CODE_SMELL
+Usquid:S1172
+"(Remove this unused method parameter "i".(Ü±¤ÃHæ)RMAJORZ
+CODE_SMELL
+j
+squid:S106"9Replace this use of System.out or System.err by a logger.(‚¾øýýÿÿÿÿHç)RMAJORZ
+CODE_SMELL
+\squid:S1172"*Remove this unused method parameter "str".(ýêë³ùÿÿÿÿHè)RMAJORZ
+CODE_SMELL
+j
+squid:S106"9Replace this use of System.out or System.err by a logger.(à¾¥œþÿÿÿÿHé)RMAJORZ
+CODE_SMELL
+Xsquid:S1172"&Remove these unused method parameters.(”ç‰¿ýÿÿÿÿHê)RMAJORZ
+CODE_SMELL
+j
+squid:S106"9Replace this use of System.out or System.err by a logger.(ÈÅ™¼üÿÿÿÿHë)RMAJORZ
+CODE_SMELL
+Ssquid:S1172"&Remove these unused method parameters.(ÚÅ£ÖHì)RMAJORZ
+CODE_SMELL
+j
+squid:S106"9Replace this use of System.out or System.err by a logger.(¿Â¨ÔúÿÿÿÿHí)RMAJORZ
+CODE_SMELL

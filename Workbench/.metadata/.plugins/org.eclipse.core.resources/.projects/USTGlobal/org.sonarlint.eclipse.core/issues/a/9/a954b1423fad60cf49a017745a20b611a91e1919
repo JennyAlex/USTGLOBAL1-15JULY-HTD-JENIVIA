@@ -1,0 +1,21 @@
+
+dsquid:S1854 "7Remove this useless assignment to local variable "su4".(Á”ĞĞHÚ)RMAJORZ
+CODE_SMELL
+dsquid:S1854"7Remove this useless assignment to local variable "su3".(ÜèÏíHÛ)RMAJORZ
+CODE_SMELL
+dsquid:S1854"7Remove this useless assignment to local variable "su2".(¼ïñHÜ)RMAJORZ
+CODE_SMELL
+csquid:S1854"7Remove this useless assignment to local variable "su1".(äĞ†SHİ)RMAJORZ
+CODE_SMELL
+hsquid:S1854"6Remove this useless assignment to local variable "su".(¿·ŠÕùÿÿÿÿHŞ)RMAJORZ
+CODE_SMELL
+Ysquid:S1481"'Remove this unused "su" local variable.(¿·ŠÕùÿÿÿÿHß)RMINORZ
+CODE_SMELL
+Tsquid:S1481"(Remove this unused "su1" local variable.(äĞ†SHà)RMINORZ
+CODE_SMELL
+Usquid:S1481"(Remove this unused "su2" local variable.(¼ïñHá)RMINORZ
+CODE_SMELL
+Usquid:S1481"(Remove this unused "su3" local variable.(ÜèÏíHâ)RMINORZ
+CODE_SMELL
+Usquid:S1481 "(Remove this unused "su4" local variable.(Á”ĞĞHã)RMINORZ
+CODE_SMELL

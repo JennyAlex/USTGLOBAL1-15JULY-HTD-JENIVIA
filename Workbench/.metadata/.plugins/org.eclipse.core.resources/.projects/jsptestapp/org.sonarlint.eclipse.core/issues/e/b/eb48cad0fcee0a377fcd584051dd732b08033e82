@@ -1,0 +1,9 @@
+
+{squid:UselessImportCheck":Remove this unused import 'javax.persistence.CascadeType'.( ì¤Ê8ÝÍ„ÈÔ-HÁ,RMINORZ
+CODE_SMELL
+xsquid:UselessImportCheck"8Remove this unused import 'javax.persistence.OneToMany'.(«õù;8ÝÍ„ÈÔ-HÂ,RMINORZ
+CODE_SMELL
+zsquid:UselessImportCheck"9Remove this unused import 'javax.persistence.JoinColumn'.(´Å¼á8ÝÍ„ÈÔ-HÃ,RMINORZ
+CODE_SMELL
+xsquid:UselessImportCheck	"7Remove this unused import 'javax.persistence.OneToOne'.(Ø½ïâ8áÉ€ÈÔ-HÄ,RMINORZ
+CODE_SMELL

@@ -1,0 +1,36 @@
+
+_squid:S4925"-Remove this "Class.forName()", it is useless.(¹µÖÁüÿÿÿÿH,RMAJORZ
+CODE_SMELL
+j
+squid:S106!"9Replace this use of System.out or System.err by a logger.(§Ë€¼ÿÿÿÿÿH,RMAJORZ
+CODE_SMELL
+usquid:S2095"HUse try-with-resources or close this "Connection" in a "finally" clause.(¹Ø”ùÿÿÿÿHŸ,RBLOCKERZBUG
+e
+squid:S106"9Replace this use of System.out or System.err by a logger.(İ’†H ,RMAJORZ
+CODE_SMELL
+j
+squid:S106"9Replace this use of System.out or System.err by a logger.(§â¹ÀüÿÿÿÿH¡,RMAJORZ
+CODE_SMELL
+d
+squid:S106#"9Replace this use of System.out or System.err by a logger.(»ÛËH¢,RMAJORZ
+CODE_SMELL
+j
+squid:S106"9Replace this use of System.out or System.err by a logger.(äƒçãÿÿÿÿÿH£,RMAJORZ
+CODE_SMELL
+d
+squid:S106<"9Replace this use of System.out or System.err by a logger.(Ü®¦H¤,RMAJORZ
+CODE_SMELL
+Xsquid:S1148="#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿH¥,RMINORZVULNERABILITY
+j
+squid:S106"9Replace this use of System.out or System.err by a logger.(ª“ÿÏüÿÿÿÿH¦,RMAJORZ
+CODE_SMELL
+|squid:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ò‡£´ÿÿÿÿÿH§,RBLOCKERZBUG
+j
+squid:S106+"9Replace this use of System.out or System.err by a logger.(ÏËŞİÿÿÿÿÿH¨,RMAJORZ
+CODE_SMELL
+d
+squid:S106."9Replace this use of System.out or System.err by a logger.(Ü®¦H©,RMAJORZ
+CODE_SMELL
+j
+squid:S106"9Replace this use of System.out or System.err by a logger.(¤„ºëûÿÿÿÿHª,RMAJORZ
+CODE_SMELL

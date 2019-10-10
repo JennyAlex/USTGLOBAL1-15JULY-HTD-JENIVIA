@@ -1,0 +1,26 @@
+
+‘squid:S1149"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(°° ûşÿÿÿÿH²*RMAJORZ
+CODE_SMELL
+Rsquid:S2129	" Remove this "String" constructor(ÇÊ˜úÿÿÿÿÿH³*RMAJORZ
+CODE_SMELL
+d
+squid:S106"9Replace this use of System.out or System.err by a logger.(ƒÚáBH´*RMAJORZ
+CODE_SMELL
+j
+squid:S106"9Replace this use of System.out or System.err by a logger.(“Ÿ÷ŸüÿÿÿÿHµ*RMAJORZ
+CODE_SMELL
+d
+squid:S106"9Replace this use of System.out or System.err by a logger.(âùÏ=H¶*RMAJORZ
+CODE_SMELL
+j
+squid:S106"9Replace this use of System.out or System.err by a logger.(üğúÿÿÿÿH·*RMAJORZ
+CODE_SMELL
+e
+squid:S106"9Replace this use of System.out or System.err by a logger.(øµäëH¸*RMAJORZ
+CODE_SMELL
+j
+squid:S106"9Replace this use of System.out or System.err by a logger.(™©ôÃøÿÿÿÿH¹*RMAJORZ
+CODE_SMELL
+j
+squid:S106"9Replace this use of System.out or System.err by a logger.(ƒáÒ±ùÿÿÿÿHº*RMAJORZ
+CODE_SMELL

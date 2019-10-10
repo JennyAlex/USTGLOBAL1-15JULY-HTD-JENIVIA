@@ -1,0 +1,21 @@
+
+e
+squid:S106"9Replace this use of System.out or System.err by a logger.(•ý‹œH¢*RMAJORZ
+CODE_SMELL
+Zsquid:S1172"(Remove this unused method parameter "i".(ê›ÃõøÿÿÿÿH£*RMAJORZ
+CODE_SMELL
+d
+squid:S106"9Replace this use of System.out or System.err by a logger.(¶àýH¤*RMAJORZ
+CODE_SMELL
+Usquid:S1172"(Remove this unused method parameter "a".(–ñ—’H¥*RMAJORZ
+CODE_SMELL
+d
+squid:S106"9Replace this use of System.out or System.err by a logger.(¶àýH¦*RMAJORZ
+CODE_SMELL
+\squid:S1172"*Remove this unused method parameter "str".(ÈÙ±ŒüÿÿÿÿH§*RMAJORZ
+CODE_SMELL
+j
+squid:S106"9Replace this use of System.out or System.err by a logger.(†ðºæýÿÿÿÿH¨*RMAJORZ
+CODE_SMELL
+esquid:UnusedPrivateMethod"*Remove this unused private "print" method.(–ñ—’H©*RMAJORZ
+CODE_SMELL

@@ -1,0 +1,44 @@
+
+j
+squid:S106"9Replace this use of System.out or System.err by a logger.(ˆ¯ ­ıÿÿÿÿHª)RMAJORZ
+CODE_SMELL
+Usquid:S1172"(Remove this unused method parameter "i".(²”ĞËH«)RMAJORZ
+CODE_SMELL
+j
+squid:S106"9Replace this use of System.out or System.err by a logger.(ı×•£úÿÿÿÿH¬)RMAJORZ
+CODE_SMELL
+Tsquid:S1172"(Remove this unused method parameter "s".(†ŸƒH­)RMAJORZ
+CODE_SMELL
+e
+squid:S106"9Replace this use of System.out or System.err by a logger.(ÛûõËH®)RMAJORZ
+CODE_SMELL
+Ssquid:S1172"&Remove these unused method parameters.(¸óü÷H¯)RMAJORZ
+CODE_SMELL
+e
+squid:S106"9Replace this use of System.out or System.err by a logger.(ß„á£H°)RMAJORZ
+CODE_SMELL
+Xsquid:S1172"&Remove these unused method parameters.(°ğË£ûÿÿÿÿH±)RMAJORZ
+CODE_SMELL
+e
+squid:S106"9Replace this use of System.out or System.err by a logger.(¯ÁÖ‡H²)RMAJORZ
+CODE_SMELL
+isquid:S1854"7Remove this useless assignment to local variable "ce4".(ÅùåèúÿÿÿÿH³)RMAJORZ
+CODE_SMELL
+isquid:S1854"7Remove this useless assignment to local variable "ce3".(¤¦»ñÿÿÿÿÿH´)RMAJORZ
+CODE_SMELL
+isquid:S1854"7Remove this useless assignment to local variable "ce2".(Ü´°úÿÿÿÿHµ)RMAJORZ
+CODE_SMELL
+dsquid:S1854"7Remove this useless assignment to local variable "ce1".(Ã´šÃH¶)RMAJORZ
+CODE_SMELL
+csquid:S1854"6Remove this useless assignment to local variable "ce".(òğğ’H·)RMAJORZ
+CODE_SMELL
+Tsquid:S1481"'Remove this unused "ce" local variable.(òğğ’H¸)RMINORZ
+CODE_SMELL
+Usquid:S1481"(Remove this unused "ce1" local variable.(Ã´šÃH¹)RMINORZ
+CODE_SMELL
+Zsquid:S1481"(Remove this unused "ce2" local variable.(Ü´°úÿÿÿÿHº)RMINORZ
+CODE_SMELL
+Zsquid:S1481"(Remove this unused "ce3" local variable.(¤¦»ñÿÿÿÿÿH»)RMINORZ
+CODE_SMELL
+Zsquid:S1481"(Remove this unused "ce4" local variable.(ÅùåèúÿÿÿÿH¼)RMINORZ
+CODE_SMELL

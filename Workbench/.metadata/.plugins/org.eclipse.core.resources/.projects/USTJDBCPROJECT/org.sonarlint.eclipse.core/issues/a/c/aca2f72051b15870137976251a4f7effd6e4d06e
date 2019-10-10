@@ -1,0 +1,27 @@
+
+\squid:S11991"-Extract this nested code block into a method.(ÒÌâ–øÿÿÿÿRMINORZ
+CODE_SMELL
+ysquid:S2095>"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(öÚ¥ùÿÿÿÿRBLOCKERZBUG
+rsquid:S2095="HUse try-with-resources or close this "Connection" in a "finally" clause.(Ÿ×ä…ùÿÿÿÿRBLOCKERZBUG
+Usquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿRMINORZVULNERABILITY
+Usquid:S1148/"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿRMINORZVULNERABILITY
+Usquid:S1148O"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿRMINORZVULNERABILITY
+ˆsquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÂŠ²ÆRCRITICALZ
+CODE_SMELL
+\squid:S4925"-Remove this "Class.forName()", it is useless.(¹µÖÁüÿÿÿÿRMAJORZ
+CODE_SMELL
+Šsquid:S2068"V'password' detected in this expression, review this potentially hard-coded credential.(£‡ÿşÿÿÿÿRBLOCKERZVULNERABILITY
+b
+squid:S106+"9Replace this use of System.out or System.err by a logger.(Âæ“úRMAJORZ
+CODE_SMELL
+Ysquid:S001081")Either remove or fill this block of code.(ÒÌâ–øÿÿÿÿRMAJORZ
+CODE_SMELL
+b
+squid:S106F"9Replace this use of System.out or System.err by a logger.(ØÕÏRMAJORZ
+CODE_SMELL
+b
+squid:S106I"9Replace this use of System.out or System.err by a logger.(ÓêÛÖRMAJORZ
+CODE_SMELL
+b
+squid:S106N"9Replace this use of System.out or System.err by a logger.(ÓêÛÖRMAJORZ
+CODE_SMELL
