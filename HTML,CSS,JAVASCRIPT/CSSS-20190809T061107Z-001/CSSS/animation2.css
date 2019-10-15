@@ -1,0 +1,105 @@
+span{
+    text-align: center;
+
+    font-size: 30px;
+    
+    display: inline-block;
+background-color:indianred;
+width:50px;
+height:50px;
+border-radius:20%;
+margin-left:60px;
+animation: movement 1s infinite linear;
+    }
+
+    @keyframes movement{
+        0%
+        {
+            transform:translateX(0px)
+        }
+        50%{
+            transform:translateX(100px);
+        }
+        100%
+        {
+            transform:translateX(0px);
+        }
+    }
+
+    span:nth-child(1){
+
+    
+        background-color:maroon;
+        animation-delay: 0.1s;
+        box-shadow:0 0 15px black;
+        }
+        span:nth-child(2){
+    
+        
+            background-color:blue;
+            animation-delay: 0.2s;
+            box-shadow:0 0 15px black;
+            }
+    
+    
+            span:nth-child(3){
+    
+        
+                background-color:indianred;
+                animation-delay: 0.3s;
+                box-shadow:0 0 15px black;
+                }
+    
+    
+                span:nth-child(4){
+    
+        
+                    background-color:indigo;
+                    animation-delay: 0.4s;
+                    box-shadow:0 0 15px black;
+                    }
+    
+    
+                    span:nth-child(5){
+    
+        
+                        background-color:brown;
+                        animation-delay: 0.5s;
+                        box-shadow:0 0 15px black;
+                        }
+                        span:nth-child(6){
+    
+        
+                            background-color:maroon;
+                            animation-delay: 0.6s;
+                            box-shadow:0 0 15px black;
+                            }
+
+                            span:nth-child(7){
+    
+        
+                                background-color:yellowgreen;
+                                animation-delay: 0.7s;
+                                box-shadow:0 0 15px black;
+                                }
+    
+                                span:nth-child(8){
+    
+        
+                                    background-color:orangered;
+                                    animation-delay: 0.8s;
+                                    box-shadow:0 0 15px black;
+                                    }
+                                    span:nth-child(9){
+    
+        
+                                        background-color:lawngreen;
+                                        animation-delay: 0.9s;
+                                        box-shadow:0 0 15px black;
+                                        }
+                
+            
+    
+    
+    
+    

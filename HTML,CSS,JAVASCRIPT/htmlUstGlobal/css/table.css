@@ -1,0 +1,20 @@
+body {
+    background: white;
+    
+}
+table {
+    background:white;
+    border-radius: 10px;
+
+}
+th{
+    border-style: solid;
+    border-radius: 10px;
+    background:olive;
+    
+}
+td {
+    border-style: solid;
+    border-radius:10px;
+    background: palevioletred;
+}

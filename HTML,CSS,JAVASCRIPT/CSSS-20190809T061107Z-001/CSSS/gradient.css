@@ -1,0 +1,12 @@
+/* #grade{
+    
+
+ height:300px;
+ background:linear-gradient(yellow,red,yellowgreen);
+
+} */
+#grad{
+    height:600px;
+    background:radial-gradient(black,red,blue);
+
+}

@@ -1,0 +1,66 @@
+body{
+    background:red
+    margin=0;
+}
+ #header {
+     background:#fff;
+     padding: 10px;
+     margin: 0px;
+     height:20px;
+
+ }
+ .logo {
+     width:10%;
+     float:left;
+ }
+    .menu {
+        width:30%;
+        text-align: right;
+        margin: 0;
+        float:right;
+
+    }
+    .logo img {
+        width:50px;
+        margin:0px 14px;
+    }
+ 
+    .menu a {
+       text-decoration:none;
+       color: #fff;
+       padding: 5px;
+       border: 1px solid #eee;
+       font-size: 13px;
+       background: red;
+       font-weight: bold;
+       border-radius:3px;
+    }
+   
+    .menu a:hover {
+        background: #111;
+        transform:skew(30%);
+        transition:cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    }
+    #slider img {
+        width:100%;
+        height:400px;
+    }
+    
+    .helpText {
+        opacity:0.7;
+        background: #fff;
+        position: absolute;
+        top:141px;
+        width: 300px;
+        margin: 0 214px;
+    }
+
+    .helpText p {
+                  font-size: 10px;
+                  padding:0px 30px;
+                  line-height: 16px;
+
+    }
+
+    

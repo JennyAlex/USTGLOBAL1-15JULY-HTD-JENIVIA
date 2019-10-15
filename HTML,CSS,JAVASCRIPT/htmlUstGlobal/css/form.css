@@ -1,0 +1,25 @@
+body{
+    text-align: center;
+    background:tomato;
+    margin:10px;
+    
+}
+fieldset{
+    text-align: center;
+    background:darkcyan;
+    width: 29%;
+    border-radius: 24px;
+    margin:207px;
+    
+}
+form {
+    
+   margin-left: 22%;
+    text-align: center;
+    border-radius:50px;
+
+}
+.usr{
+border-radius: 50px;
+}
+   
