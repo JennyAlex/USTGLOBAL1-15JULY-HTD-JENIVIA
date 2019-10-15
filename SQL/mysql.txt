@@ -1,0 +1,1792 @@
+                                                                                                        
+8.[to drop a table. It will drop the data and structure also]
+9.                                                     
+10.drop database ustglobal         [ to drop a database ]                 { drop database database_name} 
+11.  show databases;                 [  to show all the databases]
+     create database ust;            [creating databases]
+     show databases;
+     use ust;                        [to use particular database ]
+      create table emp(id int, name varchar(150), address varchar(200));       {   create table table_name(column_name datatype,…..}
+                                          [ A table is created student with 3 columns id, name and email id]
+       show tables;                     [ to check if there are any table present]
+       desc emp;                    [use to describe the table]
+      
+12.  alter table emp add column mobileno int;           
+                                          [using alter we can add column]
+13. desc emp;                             
+14.  alter table emp add address varchar(220);                                      
+15.  alter table emp add state  varchar(220);                                     
+16.   desc emp;                                    
+17.  alter table emp drop address;                                                        
+18.  desc emp;                                                       
+19.  alter table emp drop state ;                                                      
+
+20.  desc emp;           
+     rename table emp to employee;              [change the table name, we cannot change the database name ]
+     show tables;                                             
+       insert into employee(id, empname,  address) values(1254, 'palak',  'mumbai');
+    select *from employee;    [to display the table]
+    insert into employee(id) values(1225);   [to insert values in some particular columns. only ]
+      update employee set address='delhi';    [will update the whole column with the value specified]
+     delete from employee;            [delete the whole table]
+sse
+truncate table employee;     [to delete all the records present in table]
+select empname from employee;   [projection]
+
+
+1) QUESTION--write a query to retrive data from table employee whose name is palak and id-4587
+   select *from employee where empname='palak';
+   select *from employee where id='3652';
+   
+
+ 2)update employee set  address='delhi' where id=4587;    
+    delete from employee where id=4587;     [particular row will be deleted where id=4587]
+
+
+---------------------create table using constraints------------------------
+
+3) create table emp_info(id int, name varchar(120) not null, emailid varchar(120), designation varchar(120), mobileno int, age int, dob date not null, doj date, salary double, dept_id int, blood_group varchar(120), primary key(id));
+
+
+12-08-19
+
+4)----------------query to  give temporary name of column blood group as bg and display only id name and blood group--------------------------
+
+
+select id,name, blood_group as bg from emp_info;
+
+
+
+--5)-------------query to display employee name, annual salary, designation---------------
+
+
+ select name, designation, salary*12 as Sal from emp_info;
+             or
+  select name, designation,salary, salary*12 Annual_Sal from emp_info;
+
+------6)---------------query to give the alias name for all the columns present in the emp_info table--------------
+
+ select id emp_id, name emp_name, emailid email_id, designation emp_desig, mobileno mobno, age emp_age, dob as emp_dob, doj emp_doj, salary emp_salary, dept_id emp_dept_id, blood_group emp_bg from emp_info;
+
+
+-----7)---------query to display the unique department id from emp_info table-----------
+
+select distinct dept_id from emp_info;
+
+-----8)------query to display the distint value for designation and dept_id--------------
+
+select distinct designation, dept_id from emp_info;
+
+----9---query to display unique dept_id , designation, age from emp_info table--------------
+
+select distinct designation, dept_id, age from emp_info;
+
+10-------query to display name, salary and salary increment by 5000------------
+
+select name, salary, salary+5000  incremented_salary from emp_info;  
++------------+--------+--------------------+
+| name       | salary | incremented_salary |
++------------+--------+--------------------+
+| Palak      |  35000 |              40000 |
+| Pushkar    |  32000 |              37000 |
+| Tejas      |  36000 |              41000 |
+| Prathamesh |  32000 |              37000 |
+| Ameyaa     |  40000 |              45000 |
+| Shaahank   |  45000 |              50000 |
+| Yatmesh    |  30000 |              35000 |
+| Nikunj     |  36000 |              41000 |
+| Khushal    |  42000 |              47000 |
+| Laksh      |  40000 |              45000 |
+| Shivani    |  38000 |              43000 |
+| Om         |  34000 |              39000 |
+| Anwesha    |  32000 |              37000 |
+| Aaradhya   |  31000 |              36000 |
+| Shreyas    |  31000 |              36000 |
++------------+--------+--------------------+ 	
+
+11-------query to display name, salary and salary decrement by 5000------------
+
+select name, salary, salary-5000  decremented_salary from emp_info;
++------------+--------+--------------------+
+| name       | salary | decremented_salary |
++------------+--------+--------------------+
+| Palak      |  35000 |              30000 |
+| Pushkar    |  32000 |              27000 |
+| Tejas      |  36000 |              31000 |
+| Prathamesh |  32000 |              27000 |
+| Ameyaa     |  40000 |              35000 |
+| Shaahank   |  45000 |              40000 |
+| Yatmesh    |  30000 |              25000 |
+| Nikunj     |  36000 |              31000 |
+| Khushal    |  42000 |              37000 |
+| Laksh      |  40000 |              35000 |
+| Shivani    |  38000 |              33000 |
+| Om         |  34000 |              29000 |
+| Anwesha    |  32000 |              27000 |
+| Aaradhya   |  31000 |              26000 |
+| Shreyas    |  31000 |              26000 |
++------------+--------+--------------------+
+
+------12-query to display name, annual salary------------
+
+select name, salary, salary*12  annual_salary from emp_info;
++------------+--------+---------------+
+| name       | salary | annual_salary |
++------------+--------+---------------+
+| Palak      |  35000 |        420000 |
+| Pushkar    |  32000 |        384000 |
+| Tejas      |  36000 |        432000 |
+| Prathamesh |  32000 |        384000 |
+| Ameyaa     |  40000 |        480000 |
+| Shaahank   |  45000 |        540000 |
+| Yatmesh    |  30000 |        360000 |
+| Nikunj     |  36000 |        432000 |
+| Khushal    |  42000 |        504000 |
+| Laksh      |  40000 |        480000 |
+| Shivani    |  38000 |        456000 |
+| Om         |  34000 |        408000 |
+| Anwesha    |  32000 |        384000 |
+| Aaradhya   |  31000 |        372000 |
+| Shreyas    |  31000 |        372000 |
++------------+--------+---------------+
+
+-13------query to display name, salary per day------------
+
+select name, salary, salary/30  per_day_salary from emp_info;
++------------+--------+--------------------+
+| name       | salary | per_day_salary     |
++------------+--------+--------------------+
+| Palak      |  35000 | 1166.6666666666667 |
+| Pushkar    |  32000 | 1066.6666666666667 |
+| Tejas      |  36000 |               1200 |
+| Prathamesh |  32000 | 1066.6666666666667 |
+| Ameyaa     |  40000 | 1333.3333333333333 |
+| Shaahank   |  45000 |               1500 |
+| Yatmesh    |  30000 |               1000 |
+| Nikunj     |  36000 |               1200 |
+| Khushal    |  42000 |               1400 |
+| Laksh      |  40000 | 1333.3333333333333 |
+| Shivani    |  38000 | 1266.6666666666667 |
+| Om         |  34000 | 1133.3333333333333 |
+| Anwesha    |  32000 | 1066.6666666666667 |
+| Aaradhya   |  31000 | 1033.3333333333333 |
+| Shreyas    |  31000 | 1033.3333333333333 |
++------------+--------+--------------------+
+
+-14-------query to divide 10 by 3------------
+
+select 10%3;
++------+
+| 10%3 |
++------+
+|    1 |
++------+
+ select 10%3 modulus;
++---------+
+| modulus |
++---------+
+|       1 |
++---------+
+
+----15-----------query to display all the records excluding dept_id 10-----------
+select * from emp_info where dept_id!=10;
+
++-----+------------+----------------------+-------------+----------+------+------------+------------+--------+---------+-------------+
+| id  | name       | emailid              | designation | mobileno | age  | dob        | doj        | salary | dept_id | blood_group |
++-----+------------+----------------------+-------------+----------+------+------------+------------+--------+---------+-------------+
+|  33 | Tejas      | tejas@gmail.com      | Clerk       |   945824 |   22 | 1997-10-24 | 2019-04-16 |  36000 |      20 | b +ve       |
+|  44 | Prathamesh | prathamesh@gmail.com | Salesman    |   922824 |   25 | 1994-05-24 | 2015-03-16 |  32000 |      30 | ab +ve      |
+|  55 | Ameyaa     | ameyaa@gmail.com     | Analyst     |    92252 |   19 | 2000-02-22 | 2019-05-12 |  40000 |      40 | a +ve       |
+|  66 | Shaahank   | shashank@gmail.com   | Tester      |    92252 |   19 | 2000-03-17 | 2019-01-08 |  45000 |      30 | o +ve       |
+|  77 | Yatmesh    | yatmesh@gmail.com    | Clerk       |    92522 |   20 | 1999-09-14 | 2019-04-08 |  30000 |      20 | ab +ve      |
+|  88 | Nikunj     | nikunj@gmail.com     | HR          |   981255 |   20 | 1999-11-14 | 2018-02-08 |  36000 |      40 | b +ve       |
+|  99 | Khushal    | khushal@gmail.com    | Analyst     |   985842 |   21 | 1998-03-17 | 2016-02-11 |  42000 |      30 | o +ve       |
+| 141 | Anwesha    | anwesha@gmail.com    | Analyst     |   925121 |   21 | 1998-10-16 | 2017-01-11 |  32000 |      40 | a +ve       |
+| 151 | Aaradhya   | aaradhya@gmail.com   | Salesman    |   925145 |   21 | 1998-04-05 | 2018-06-11 |  31000 |      20 | ab +ve      |
+| 161 | Shreyas    | shreyas@gmail.com    | Tester      |   925545 |   22 | 1997-04-12 | 2017-05-11 |  31000 |      30 | b +ve       |
++-----+------------+----------------------+-------------+----------+------+------------+------------+--------+---------+-------------+ 
+
+
+---16------------query to display name, mobno, whose salary>5000-----------
+
+select name, mobileno, designation, salary from emp_info where salary>5000;
++------------+----------+--------------------+--------+
+| name       | mobileno | designation        | salary |
++------------+----------+--------------------+--------+
+| Palak      |   986975 | Software Developer |  35000 |
+| Pushkar    |   985824 | HR                 |  32000 |
+| Tejas      |   945824 | Clerk              |  36000 |
+| Prathamesh |   922824 | Salesman           |  32000 |
+| Ameyaa     |    92252 | Analyst            |  40000 |
+| Shaahank   |    92252 | Tester             |  45000 |
+| Yatmesh    |    92522 | Clerk              |  30000 |
+| Nikunj     |   981255 | HR                 |  36000 |
+| Khushal    |   985842 | Analyst            |  42000 |
+| Laksh      |   985458 | Analyst            |  40000 |
+| Shivani    |   985258 | HR                 |  38000 |
+| Om         |   985121 | Tester             |  34000 |
+| Anwesha    |   925121 | Analyst            |  32000 |
+| Aaradhya   |   925145 | Salesman           |  31000 |
+| Shreyas    |   925545 | Tester             |  31000 |
++------------+----------+--------------------+--------+
+
+
+---17------------query to display name, mobno, whose salary<38000-----------
+select name, mobileno, designation, salary from emp_info where salary<38000;
++------------+----------+--------------------+--------+
+| name       | mobileno | designation        | salary |
++------------+----------+--------------------+--------+
+| Palak      |   986975 | Software Developer |  35000 |
+| Pushkar    |   985824 | HR                 |  32000 |
+| Tejas      |   945824 | Clerk              |  36000 |
+| Prathamesh |   922824 | Salesman           |  32000 |
+| Yatmesh    |    92522 | Clerk              |  30000 |
+| Nikunj     |   981255 | HR                 |  36000 |
+| Om         |   985121 | Tester             |  34000 |
+| Anwesha    |   925121 | Analyst            |  32000 |
+| Aaradhya   |   925145 | Salesman           |  31000 |
+| Shreyas    |   925545 | Tester             |  31000 |
++------------+----------+--------------------+--------+
+
+---18--------------query to display  name, mobno, whose salary>=38000-----------
+
+ select name, mobileno, designation, salary from emp_info where salary>=38000;
++----------+----------+-------------+--------+
+| name     | mobileno | designation | salary |
++----------+----------+-------------+--------+
+| Ameyaa   |    92252 | Analyst     |  40000 |
+| Shaahank |    92252 | Tester      |  45000 |
+| Khushal  |   985842 | Analyst     |  42000 |
+| Laksh    |   985458 | Analyst     |  40000 |
+| Shivani  |   985258 | HR          |  38000 |
++----------+----------+-------------+--------+
+
+---19--------------query to display  name, mobno, whose salary<=45000-----------
+
+select name, mobileno, designation, salary from emp_info where salary<=45000;
++------------+----------+--------------------+--------+
+| name       | mobileno | designation        | salary |
++------------+----------+--------------------+--------+
+| Palak      |   986975 | Software Developer |  35000 |
+| Pushkar    |   985824 | HR                 |  32000 |
+| Tejas      |   945824 | Clerk              |  36000 |
+| Prathamesh |   922824 | Salesman           |  32000 |
+| Ameyaa     |    92252 | Analyst            |  40000 |
+| Shaahank   |    92252 | Tester             |  45000 |
+| Yatmesh    |    92522 | Clerk              |  30000 |
+| Nikunj     |   981255 | HR                 |  36000 |
+| Khushal    |   985842 | Analyst            |  42000 |
+| Laksh      |   985458 | Analyst            |  40000 |
+| Shivani    |   985258 | HR                 |  38000 |
+| Om         |   985121 | Tester             |  34000 |
+| Anwesha    |   925121 | Analyst            |  32000 |
+| Aaradhya   |   925145 | Salesman           |  31000 |
+| Shreyas    |   925545 | Tester             |  31000 |
++------------+----------+--------------------+--------+
+
+
+---20---------------query to display all the records who is working with dept_id 20 only if salary>10000-------------
+
+select * from emp_info where dept_id=20 && salary>10000;
++-----+----------+--------------------+-------------+----------+------+------------+------------+--------+---------+-------------+
+| id  | name     | emailid            | designation | mobileno | age  | dob        | doj        | salary | dept_id | blood_group |
++-----+----------+--------------------+-------------+----------+------+------------+------------+--------+---------+-------------+
+|  33 | Tejas    | tejas@gmail.com    | Clerk       |   945824 |   22 | 1997-10-24 | 2019-04-16 |  36000 |      20 | b +ve       |
+|  77 | Yatmesh  | yatmesh@gmail.com  | Clerk       |    92522 |   20 | 1999-09-14 | 2019-04-08 |  30000 |      20 | ab +ve      |
+| 151 | Aaradhya | aaradhya@gmail.com | Salesman    |   925145 |   21 | 1998-04-05 | 2018-06-11 |  31000 |      20 | ab +ve      |
++-----+----------+--------------------+-------------+----------+------+------------+------------+--------+---------+-------------+
+
+
+
+---21--------------query to dispaly all the record of emp_info table who is working as salesman and dob is 1994-------------
+
+select * from emp_info where designation='Salesman' and dob='1994-05-24';
++----+------------+----------------------+-------------+----------+------+------------+------------+--------+---------+-------------+
+| id | name       | emailid              | designation | mobileno | age  | dob        | doj        | salary | dept_id | blood_group |
++----+------------+----------------------+-------------+----------+------+------------+------------+--------+---------+-------------+
+| 44 | Prathamesh | prathamesh@gmail.com | Salesman    |   922824 |   25 | 1994-05-24 | 2015-03-16 |  32000 |      30 | ab +ve      |
++----+------------+----------------------+-------------+----------+------+------------+------------+--------+---------+-------------+
+
+date:14 aug
+
+11Write a query to displayall the records of employee info table whose salary=10,000 as well as job designation is analyst
+
+mysql> select * from employee_info where salary= 350000 and designation= 'analyst' ;
+
+Empty set (0.23 sec)
+
+23 Write a query to display all the records whose working in department no.20 or deptno.60 
+mysql> select * from employee_info where deptId = 20 or deptId =60 ;
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name      | emailId           | designation       | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+|  101 | jenny     | jenn12@gmail.com  | software engineer | 987654321 |   21 | 1996-10-26 | 2019-07-15 | 350000 |     20 | o+         |
+|  104 | mathhew   | math2@gmail.com   | salesman          | 987665378 |   23 | 1997-08-05 | 2019-03-15 | 330000 |     20 | b+         |
+|  105 | alisha    | ali@gmail.com     | hr                | 987988378 |   22 | 1997-09-05 | 2019-05-15 | 390000 |     20 | o+         |
+|  107 | rahul     | ra23@gmail.com    | tester            | 987988378 |   23 | 1997-06-05 | 2019-02-05 | 300000 |     20 | o+         |
+|  108 | amritha   | amu23@gmail.com   | clerk             | 987980978 |   23 | 1997-05-05 | 2019-02-07 | 300000 |     20 | a+         |
+|  109 | prashanth | prash23@gmail.com | analyst           | 987980988 |   23 | 1997-09-05 | 2019-02-08 | 320000 |     20 | o+         |
+|  110 | jinni     | jinny@gmail.com   | tester            | 887980988 |   26 | 1995-09-05 | 2019-02-08 | 380000 |     20 | o+         |
+|  111 | karan     | karan@gmail.com   | salesman          | 889980988 |   20 | 1999-09-05 | 2019-06-08 | 300000 |     20 | b+         |
+|  112 | finny     | finny@gmail.com   | softdevloper      | 889986788 |   21 | 1999-04-05 | 2019-05-08 | 340000 |     20 | b+         |
+|  114 | aishu     | aish@gmail.com    | clerk             | 989986458 |   22 | 1993-04-05 | 2019-08-08 | 350000 |     20 | a+         |
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+10 rows in set (0.00 sec)
+
+24 Write a query to display name salary emailid who is workin as a tester or age is greater than 20
+
+mysql> select name , salary , emailId  from employee_info  where  designation = 'tester' or age > 20 ;
++-----------+--------+-------------------+
+| name      | salary | emailId           |
++-----------+--------+-------------------+
+| jenny     | 350000 | jenn12@gmail.com  |
+| bhakti    | 340000 | bhak12@gmail.com  |
+| aradhya   | 360000 | radh2@gmail.com   |
+| mathhew   | 330000 | math2@gmail.com   |
+| alisha    | 390000 | ali@gmail.com     |
+| chhaya    | 300000 | cha@gmail.com     |
+| rahul     | 300000 | ra23@gmail.com    |
+| amritha   | 300000 | amu23@gmail.com   |
+| prashanth | 320000 | prash23@gmail.com |
+| jinni     | 380000 | jinny@gmail.com   |
+| finny     | 340000 | finny@gmail.com   |
+| anjali    | 350000 | anji@gmail.com    |
+| aishu     | 350000 | aish@gmail.com    |
+| sriya     | 320000 | sri12@gmail.com   |
++-----------+--------+-------------------+
+14 rows in set (0.00 sec)
+
+25Write  query to display the name of all employees who is working as a hr in deptno 30 or designation is clerk where salary is greater than 10000;
+
+mysql> select name from employee_info where designation = 'hr' and deptId = 30 or designation= 'çlerk' and  salary > 10000 ;
++---------+
+| name    |
++---------+
+| bhakti  |
+| aradhya |
+| amritha |
+| aishu   |
++---------+
+
+26 write a query to display salary =10,000 and designation is software developer
+mysql> select * from employee_info where salary=10000 and designation = 'softdevloper';
+Empty set (0.00 sec)
+
+
+ 27 Write a query to display where designation is no equl to software developer;
+ select * from employee_info where not  designation= 'softdevloper';
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name      | emailId           | designation       | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+|  101 | jenny     | jenn12@gmail.com  | software engineer | 987654321 |   21 | 1996-10-26 | 2019-07-15 | 350000 |     20 | o+         |
+|  102 | bhakti    | bhak12@gmail.com  | hr                | 987655678 |   21 | 1997-10-06 | 2019-04-15 | 340000 |     30 | b+         |
+|  103 | aradhya   | radh2@gmail.com   | clerk             | 987655678 |   25 | 1997-08-06 | 2019-03-15 | 360000 |     40 | a+         |
+|  104 | mathhew   | math2@gmail.com   | salesman          | 987665378 |   23 | 1997-08-05 | 2019-03-15 | 330000 |     20 | b+         |
+|  105 | alisha    | ali@gmail.com     | hr                | 987988378 |   22 | 1997-09-05 | 2019-05-15 | 390000 |     20 | o+         |
+|  106 | chhaya    | cha@gmail.com     | analyst           | 987988378 |   23 | 1997-06-05 | 2019-02-15 | 300000 |     50 | o+         |
+|  107 | rahul     | ra23@gmail.com    | tester            | 987988378 |   23 | 1997-06-05 | 2019-02-05 | 300000 |     20 | o+         |
+|  108 | amritha   | amu23@gmail.com   | clerk             | 987980978 |   23 | 1997-05-05 | 2019-02-07 | 300000 |     20 | a+         |
+|  109 | prashanth | prash23@gmail.com | analyst           | 987980988 |   23 | 1997-09-05 | 2019-02-08 | 320000 |     20 | o+         |
+|  110 | jinni     | jinny@gmail.com   | tester            | 887980988 |   26 | 1995-09-05 | 2019-02-08 | 380000 |     20 | o+         |
+|  111 | karan     | karan@gmail.com   | salesman          | 889980988 |   20 | 1999-09-05 | 2019-06-08 | 300000 |     20 | b+         |
+|  113 | anjali    | anji@gmail.com    | software engineer | 989986658 |   24 | 1993-03-05 | 2019-08-08 | 350000 |     10 | a+         |
+|  114 | aishu     | aish@gmail.com    | clerk             | 989986458 |   22 | 1993-04-05 | 2019-08-08 | 350000 |     20 | a+         |
+|  115 | sriya     | sri12@gmail.com   | hr                | 985686458 |   22 | 1996-02-04 | 2019-07-08 | 320000 |     10 | a+         |
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+14 rows in set (0.00 sec)
+28 write a query to display all employee excluding dept id=20 or dept id =30
+
+mysql> select * from employee_info where not  (deptId = 20 or  deptId = 30 );
++------+---------+-----------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name    | emailId         | designation       | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+---------+-----------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+|  103 | aradhya | radh2@gmail.com | clerk             | 987655678 |   25 | 1997-08-06 | 2019-03-15 | 360000 |     40 | a+         |
+|  106 | chhaya  | cha@gmail.com   | analyst           | 987988378 |   23 | 1997-06-05 | 2019-02-15 | 300000 |     50 | o+         |
+|  113 | anjali  | anji@gmail.com  | software engineer | 989986658 |   24 | 1993-03-05 | 2019-08-08 | 350000 |     10 | a+         |
+|  115 | sriya   | sri12@gmail.com | hr                | 985686458 |   22 | 1996-02-04 | 2019-07-08 | 320000 |     10 | a+         |
++------+---------+-----------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+4 rows in set (0.00 sec)
+
+
+29mysql> select * from employee_info where (deptId != 20 and deptId != 30) ; //// my method
++------+---------+-----------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name    | emailId         | designation       | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+---------+-----------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+|  103 | aradhya | radh2@gmail.com | clerk             | 987655678 |   25 | 1997-08-06 | 2019-03-15 | 360000 |     40 | a+         |
+|  106 | chhaya  | cha@gmail.com   | analyst           | 987988378 |   23 | 1997-06-05 | 2019-02-15 | 300000 |     50 | o+         |
+|  113 | anjali  | anji@gmail.com  | software engineer | 989986658 |   24 | 1993-03-05 | 2019-08-08 | 350000 |     10 | a+         |
+|  115 | sriya   | sri12@gmail.com | hr                | 985686458 |   22 | 1996-02-04 | 2019-07-08 | 320000 |     10 | a+         |
++------+---------+-----------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+4 rows in set (0.00 sec)
+
+
+ 30 write a query to display to display all the employee details excluding salesman who all are working in deptid=40;
+
+mysql> select * from employee_info where not  (designation = 'salesman' and deptId= 40 );
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name      | emailId           | designation       | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+|  101 | jenny     | jenn12@gmail.com  | software engineer | 987654321 |   21 | 1996-10-26 | 2019-07-15 | 350000 |     20 | o+         |
+|  102 | bhakti    | bhak12@gmail.com  | hr                | 987655678 |   21 | 1997-10-06 | 2019-04-15 | 340000 |     30 | b+         |
+|  103 | aradhya   | radh2@gmail.com   | clerk             | 987655678 |   25 | 1997-08-06 | 2019-03-15 | 360000 |     40 | a+         |
+|  104 | mathhew   | math2@gmail.com   | salesman          | 987665378 |   23 | 1997-08-05 | 2019-03-15 | 330000 |     20 | b+         |
+|  105 | alisha    | ali@gmail.com     | hr                | 987988378 |   22 | 1997-09-05 | 2019-05-15 | 390000 |     20 | o+         |
+|  106 | chhaya    | cha@gmail.com     | analyst           | 987988378 |   23 | 1997-06-05 | 2019-02-15 | 300000 |     50 | o+         |
+|  107 | rahul     | ra23@gmail.com    | tester            | 987988378 |   23 | 1997-06-05 | 2019-02-05 | 300000 |     20 | o+         |
+|  108 | amritha   | amu23@gmail.com   | clerk             | 987980978 |   23 | 1997-05-05 | 2019-02-07 | 300000 |     20 | a+         |
+|  109 | prashanth | prash23@gmail.com | analyst           | 987980988 |   23 | 1997-09-05 | 2019-02-08 | 320000 |     20 | o+         |
+|  110 | jinni     | jinny@gmail.com   | tester            | 887980988 |   26 | 1995-09-05 | 2019-02-08 | 380000 |     20 | o+         |
+|  111 | karan     | karan@gmail.com   | salesman          | 889980988 |   20 | 1999-09-05 | 2019-06-08 | 300000 |     20 | b+         |
+|  112 | finny     | finny@gmail.com   | softdevloper      | 889986788 |   21 | 1999-04-05 | 2019-05-08 | 340000 |     20 | b+         |
+|  113 | anjali    | anji@gmail.com    | software engineer | 989986658 |   24 | 1993-03-05 | 2019-08-08 | 350000 |     10 | a+         |
+|  114 | aishu     | aish@gmail.com    | clerk             | 989986458 |   22 | 1993-04-05 | 2019-08-08 | 350000 |     20 | a+         |
+|  115 | sriya     | sri12@gmail.com   | hr                | 985686458 |   22 | 1996-02-04 | 2019-07-08 | 320000 |     10 | a+         |
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+15 rows in set (0.00 sec)
+
+mysql> select * from employee_info where not  (designation = 'salesman' or deptId= 40 );
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name      | emailId           | designation       | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+|  101 | jenny     | jenn12@gmail.com  | software engineer | 987654321 |   21 | 1996-10-26 | 2019-07-15 | 350000 |     20 | o+         |
+|  102 | bhakti    | bhak12@gmail.com  | hr                | 987655678 |   21 | 1997-10-06 | 2019-04-15 | 340000 |     30 | b+         |
+|  105 | alisha    | ali@gmail.com     | hr                | 987988378 |   22 | 1997-09-05 | 2019-05-15 | 390000 |     20 | o+         |
+|  106 | chhaya    | cha@gmail.com     | analyst           | 987988378 |   23 | 1997-06-05 | 2019-02-15 | 300000 |     50 | o+         |
+|  107 | rahul     | ra23@gmail.com    | tester            | 987988378 |   23 | 1997-06-05 | 2019-02-05 | 300000 |     20 | o+         |
+|  108 | amritha   | amu23@gmail.com   | clerk             | 987980978 |   23 | 1997-05-05 | 2019-02-07 | 300000 |     20 | a+         |
+|  109 | prashanth | prash23@gmail.com | analyst           | 987980988 |   23 | 1997-09-05 | 2019-02-08 | 320000 |     20 | o+         |
+|  110 | jinni     | jinny@gmail.com   | tester            | 887980988 |   26 | 1995-09-05 | 2019-02-08 | 380000 |     20 | o+         |
+|  112 | finny     | finny@gmail.com   | softdevloper      | 889986788 |   21 | 1999-04-05 | 2019-05-08 | 340000 |     20 | b+         |
+|  113 | anjali    | anji@gmail.com    | software engineer | 989986658 |   24 | 1993-03-05 | 2019-08-08 | 350000 |     10 | a+         |
+|  114 | aishu     | aish@gmail.com    | clerk             | 989986458 |   22 | 1993-04-05 | 2019-08-08 | 350000 |     20 | a+         |
+|  115 | sriya     | sri12@gmail.com   | hr                | 985686458 |   22 | 1996-02-04 | 2019-07-08 | 320000 |     10 | a+         |
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+12 rows in set (0.00 sec)
+
+
+32write a query to display all the employee details who is working as a salesman for deptno. 20 or 30; 
+mysql> select* from employee_info where( designation = 'salesman' and (deptId=20 or deptId=30 ));
++------+---------+-----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name    | emailId         | designation | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+---------+-----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+|  104 | mathhew | math2@gmail.com | salesman    | 987665378 |   23 | 1997-08-05 | 2019-03-15 | 330000 |     20 | b+         |
+|  111 | karan   | karan@gmail.com | salesman    | 889980988 |   20 | 1999-09-05 | 2019-06-08 | 300000 |     20 | b+         |
++------+---------+-----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+2 rows in set (0.00 sec)
+
+33write a query to display all the employee whose working in dept no =20 only if their salary is greater than 10,0000 and less than 340000 including 10,000 and 340000;
+mysql> select * from employee_info where deptId=20  and   (salary >= 10000 and salary <=340000 );
++------+-----------+-------------------+--------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name      | emailId           | designation  | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-----------+-------------------+--------------+-----------+------+------------+------------+--------+--------+------------+
+|  104 | mathhew   | math2@gmail.com   | salesman     | 987665378 |   23 | 1997-08-05 | 2019-03-15 | 330000 |     20 | b+         |
+|  107 | rahul     | ra23@gmail.com    | tester       | 987988378 |   23 | 1997-06-05 | 2019-02-05 | 300000 |     20 | o+         |
+|  108 | amritha   | amu23@gmail.com   | clerk        | 987980978 |   23 | 1997-05-05 | 2019-02-07 | 300000 |     20 | a+         |
+|  109 | prashanth | prash23@gmail.com | analyst      | 987980988 |   23 | 1997-09-05 | 2019-02-08 | 320000 |     20 | o+         |
+|  111 | karan     | karan@gmail.com   | salesman     | 889980988 |   20 | 1999-09-05 | 2019-06-08 | 300000 |     20 | b+         |
+|  112 | finny     | finny@gmail.com   | softdevloper | 889986788 |   21 | 1999-04-05 | 2019-05-08 | 340000 |     20 | b+         |
++------+-----------+-------------------+--------------+-----------+------+------------+------------+--------+--------+------------+
+6 rows in set (0.00 sec)
+34wite a query to display all the records  whose working as  a software developer and dob is 1994;
+mysql> select * from employee_info where (designation = 'softdevloper' and dob < '1995-01-01');
+Empty set (0.00 sec)
+wite a query to display all the records  whose working as  a clerk and dob is 1994;
+
+mysql> select * from employee_info where (designation = 'clerk' and dob < '1995-01-01');
++------+-------+----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name  | emailId        | designation | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-------+----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+|  114 | aishu | aish@gmail.com | clerk       | 989986458 |   22 | 1993-04-05 | 2019-08-08 | 350000 |     20 | a+         |
++------+-------+----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+1 row in set (0.01 sec)
+
+35mysql>waqtd employee who is working in dept no 10 or 20 or 30 
+mysql> select* from employee_info where deptId= 10 or deptId=20 or deptId=30 ;
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name      | emailId           | designation       | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+|  101 | jenny     | jenn12@gmail.com  | software engineer | 987654321 |   21 | 1996-10-26 | 2019-07-15 | 350000 |     20 | o+         |
+|  102 | bhakti    | bhak12@gmail.com  | hr                | 987655678 |   21 | 1997-10-06 | 2019-04-15 | 340000 |     30 | b+         |
+|  104 | mathhew   | math2@gmail.com   | salesman          | 987665378 |   23 | 1997-08-05 | 2019-03-15 | 330000 |     20 | b+         |
+|  105 | alisha    | ali@gmail.com     | hr                | 987988378 |   22 | 1997-09-05 | 2019-05-15 | 390000 |     20 | o+         |
+|  107 | rahul     | ra23@gmail.com    | tester            | 987988378 |   23 | 1997-06-05 | 2019-02-05 | 300000 |     20 | o+         |
+|  108 | amritha   | amu23@gmail.com   | clerk             | 987980978 |   23 | 1997-05-05 | 2019-02-07 | 300000 |     20 | a+         |
+|  109 | prashanth | prash23@gmail.com | analyst           | 987980988 |   23 | 1997-09-05 | 2019-02-08 | 320000 |     20 | o+         |
+|  110 | jinni     | jinny@gmail.com   | tester            | 887980988 |   26 | 1995-09-05 | 2019-02-08 | 380000 |     20 | o+         |
+|  111 | karan     | karan@gmail.com   | salesman          | 889980988 |   20 | 1999-09-05 | 2019-06-08 | 300000 |     20 | b+         |
+|  112 | finny     | finny@gmail.com   | softdevloper      | 889986788 |   21 | 1999-04-05 | 2019-05-08 | 340000 |     20 | b+         |
+|  113 | anjali    | anji@gmail.com    | software engineer | 989986658 |   24 | 1993-03-05 | 2019-08-08 | 350000 |     10 | a+         |
+|  114 | aishu     | aish@gmail.com    | clerk             | 989986458 |   22 | 1993-04-05 | 2019-08-08 | 350000 |     20 | a+         |
+|  115 | sriya     | sri12@gmail.com   | hr                | 985686458 |   22 | 1996-02-04 | 2019-07-08 | 320000 |     10 | a+         |
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+13 rows in set (0.00 sec)
+
+36 ////Same query using IN operator special operator
+
+mysql> select * from employee_info where deptId IN(10,20,30);
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name      | emailId           | designation       | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+|  101 | jenny     | jenn12@gmail.com  | software engineer | 987654321 |   21 | 1996-10-26 | 2019-07-15 | 350000 |     20 | o+         |
+|  102 | bhakti    | bhak12@gmail.com  | hr                | 987655678 |   21 | 1997-10-06 | 2019-04-15 | 340000 |     30 | b+         |
+|  104 | mathhew   | math2@gmail.com   | salesman          | 987665378 |   23 | 1997-08-05 | 2019-03-15 | 330000 |     20 | b+         |
+|  105 | alisha    | ali@gmail.com     | hr                | 987988378 |   22 | 1997-09-05 | 2019-05-15 | 390000 |     20 | o+         |
+|  107 | rahul     | ra23@gmail.com    | tester            | 987988378 |   23 | 1997-06-05 | 2019-02-05 | 300000 |     20 | o+         |
+|  108 | amritha   | amu23@gmail.com   | clerk             | 987980978 |   23 | 1997-05-05 | 2019-02-07 | 300000 |     20 | a+         |
+|  109 | prashanth | prash23@gmail.com | analyst           | 987980988 |   23 | 1997-09-05 | 2019-02-08 | 320000 |     20 | o+         |
+|  110 | jinni     | jinny@gmail.com   | tester            | 887980988 |   26 | 1995-09-05 | 2019-02-08 | 380000 |     20 | o+         |
+|  111 | karan     | karan@gmail.com   | salesman          | 889980988 |   20 | 1999-09-05 | 2019-06-08 | 300000 |     20 | b+         |
+|  112 | finny     | finny@gmail.com   | softdevloper      | 889986788 |   21 | 1999-04-05 | 2019-05-08 | 340000 |     20 | b+         |
+|  113 | anjali    | anji@gmail.com    | software engineer | 989986658 |   24 | 1993-03-05 | 2019-08-08 | 350000 |     10 | a+         |
+|  114 | aishu     | aish@gmail.com    | clerk             | 989986458 |   22 | 1993-04-05 | 2019-08-08 | 350000 |     20 | a+         |
+|  115 | sriya     | sri12@gmail.com   | hr                | 985686458 |   22 | 1996-02-04 | 2019-07-08 | 320000 |     10 | a+         |
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+     
+37write a query to display all employee details whose job designation is tester hr and analyst.
+
+mysql> select * from employee_info where designation IN('tester','hr','analyst');
++------+-----------+-------------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name      | emailId           | designation | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-----------+-------------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+|  102 | bhakti    | bhak12@gmail.com  | hr          | 987655678 |   21 | 1997-10-06 | 2019-04-15 | 340000 |     30 | b+         |
+|  105 | alisha    | ali@gmail.com     | hr          | 987988378 |   22 | 1997-09-05 | 2019-05-15 | 390000 |     20 | o+         |
+|  106 | chhaya    | cha@gmail.com     | analyst     | 987988378 |   23 | 1997-06-05 | 2019-02-15 | 300000 |     50 | o+         |
+|  107 | rahul     | ra23@gmail.com    | tester      | 987988378 |   23 | 1997-06-05 | 2019-02-05 | 300000 |     20 | o+         |
+|  109 | prashanth | prash23@gmail.com | analyst     | 987980988 |   23 | 1997-09-05 | 2019-02-08 | 320000 |     20 | o+         |
+|  110 | jinni     | jinny@gmail.com   | tester      | 887980988 |   26 | 1995-09-05 | 2019-02-08 | 380000 |     20 | o+         |
+|  115 | sriya     | sri12@gmail.com   | hr          | 985686458 |   22 | 1996-02-04 | 2019-07-08 | 320000 |     10 | a+         |
++------+-----------+-------------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+7 rows in set (0.01 sec)
+
+38write a query to display all the employee details who are working as a clerk in deptid 20 30 40 60 70
+mysql> select * from employee_info where designation ='clerk' and deptId IN(20,30,40,60,70);
++------+---------+-----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name    | emailId         | designation | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+---------+-----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+|  103 | aradhya | radh2@gmail.com | clerk       | 987655678 |   25 | 1997-08-06 | 2019-03-15 | 360000 |     40 | a+         |
+|  108 | amritha | amu23@gmail.com | clerk       | 987980978 |   23 | 1997-05-05 | 2019-02-07 | 300000 |     20 | a+         |
+|  114 | aishu   | aish@gmail.com  | clerk       | 989986458 |   22 | 1993-04-05 | 2019-08-08 | 350000 |     20 | a+         |
++------+---------+-----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+3 rows in set (0.00 sec)
+
+39write a query to display all the employee details who are working as a clerk exluding deptid 20 30 40 60  70
+mysql> select * from employee_info where designation ='clerk' and deptId NOT IN(20,30,40,60,70);
+Empty set (0.00 sec)
+
+mysql> select * from employee_info where designation ='clerk' and deptId NOT IN(20,30,60,70);
++------+---------+-----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name    | emailId         | designation | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+---------+-----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+|  103 | aradhya | radh2@gmail.com | clerk       | 987655678 |   25 | 1997-08-06 | 2019-03-15 | 360000 |     40 | a+         |
++------+---------+-----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+1 row in set (0.00 sec)
+40 write aquery to display all employees working in dept 20,40,60 excluding salesman or analyst;
+select * from employee_info where deptId in (20 ,40 ,60) and designation not in('salesman','analyst');
++------+---------+------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name    | emailId          | designation       | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+---------+------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+|  101 | jenny   | jenn12@gmail.com | software engineer | 987654321 |   21 | 1996-10-26 | 2019-07-15 | 350000 |     20 | o+         |
+|  103 | aradhya | radh2@gmail.com  | clerk             | 987655678 |   25 | 1997-08-06 | 2019-03-15 | 360000 |     40 | a+         |
+|  105 | alisha  | ali@gmail.com    | hr                | 987988378 |   22 | 1997-09-05 | 2019-05-15 | 390000 |     20 | o+         |
+|  107 | rahul   | ra23@gmail.com   | tester            | 987988378 |   23 | 1997-06-05 | 2019-02-05 | 300000 |     20 | o+         |
+|  108 | amritha | amu23@gmail.com  | clerk             | 987980978 |   23 | 1997-05-05 | 2019-02-07 | 300000 |     20 | a+         |
+|  110 | jinni   | jinny@gmail.com  | tester            | 887980988 |   26 | 1995-09-05 | 2019-02-08 | 380000 |     20 | o+         |
+|  112 | finny   | finny@gmail.com  | softdevloper      | 889986788 |   21 | 1999-04-05 | 2019-05-08 | 340000 |     20 | b+         |
+|  114 | aishu   | aish@gmail.com   | clerk             | 989986458 |   22 | 1993-04-05 | 2019-08-08 | 350000 |     20 | a+         |
++------+---------+------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+8 rows in set (0.00 sec)
+
+41Write a query to display all details of employee whose salary is in range of 300000 and 350000;
+mysql> select * from employee_info  where salary between 300000 and 350000;
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name      | emailId           | designation       | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+|  101 | jenny     | jenn12@gmail.com  | software engineer | 987654321 |   21 | 1996-10-26 | 2019-07-15 | 350000 |     20 | o+         |
+|  102 | bhakti    | bhak12@gmail.com  | hr                | 987655678 |   21 | 1997-10-06 | 2019-04-15 | 340000 |     30 | b+         |
+|  104 | mathhew   | math2@gmail.com   | salesman          | 987665378 |   23 | 1997-08-05 | 2019-03-15 | 330000 |     20 | b+         |
+|  106 | chhaya    | cha@gmail.com     | analyst           | 987988378 |   23 | 1997-06-05 | 2019-02-15 | 300000 |     50 | o+         |
+|  107 | rahul     | ra23@gmail.com    | tester            | 987988378 |   23 | 1997-06-05 | 2019-02-05 | 300000 |     20 | o+         |
+|  108 | amritha   | amu23@gmail.com   | clerk             | 987980978 |   23 | 1997-05-05 | 2019-02-07 | 300000 |     20 | a+         |
+|  109 | prashanth | prash23@gmail.com | analyst           | 987980988 |   23 | 1997-09-05 | 2019-02-08 | 320000 |     20 | o+         |
+|  111 | karan     | karan@gmail.com   | salesman          | 889980988 |   20 | 1999-09-05 | 2019-06-08 | 300000 |     20 | b+         |
+|  112 | finny     | finny@gmail.com   | softdevloper      | 889986788 |   21 | 1999-04-05 | 2019-05-08 | 340000 |     20 | b+         |
+|  113 | anjali    | anji@gmail.com    | software engineer | 989986658 |   24 | 1993-03-05 | 2019-08-08 | 350000 |     10 | a+         |
+|  114 | aishu     | aish@gmail.com    | clerk             | 989986458 |   22 | 1993-04-05 | 2019-08-08 | 350000 |     20 | a+         |
+|  115 | sriya     | sri12@gmail.com   | hr                | 985686458 |   22 | 1996-02-04 | 2019-07-08 | 320000 |     10 | a+         |
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+12 rows in set (0.00 sec)
+
+42mysql> select * from employee_info  where salary between 300000 and 340000;
++------+-----------+-------------------+--------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name      | emailId           | designation  | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-----------+-------------------+--------------+-----------+------+------------+------------+--------+--------+------------+
+|  102 | bhakti    | bhak12@gmail.com  | hr           | 987655678 |   21 | 1997-10-06 | 2019-04-15 | 340000 |     30 | b+         |
+|  104 | mathhew   | math2@gmail.com   | salesman     | 987665378 |   23 | 1997-08-05 | 2019-03-15 | 330000 |     20 | b+         |
+|  106 | chhaya    | cha@gmail.com     | analyst      | 987988378 |   23 | 1997-06-05 | 2019-02-15 | 300000 |     50 | o+         |
+|  107 | rahul     | ra23@gmail.com    | tester       | 987988378 |   23 | 1997-06-05 | 2019-02-05 | 300000 |     20 | o+         |
+|  108 | amritha   | amu23@gmail.com   | clerk        | 987980978 |   23 | 1997-05-05 | 2019-02-07 | 300000 |     20 | a+         |
+|  109 | prashanth | prash23@gmail.com | analyst      | 987980988 |   23 | 1997-09-05 | 2019-02-08 | 320000 |     20 | o+         |
+|  111 | karan     | karan@gmail.com   | salesman     | 889980988 |   20 | 1999-09-05 | 2019-06-08 | 300000 |     20 | b+         |
+|  112 | finny     | finny@gmail.com   | softdevloper | 889986788 |   21 | 1999-04-05 | 2019-05-08 | 340000 |     20 | b+         |
+|  115 | sriya     | sri12@gmail.com   | hr           | 985686458 |   22 | 1996-02-04 | 2019-07-08 | 320000 |     10 | a+         |
++------+-----------+-------------------+--------------+-----------+------+------------+------------+--------+--------+------------+
+9 rows in set (0.00 sec)
+
+43mysql> select * from employee_info  where salary between 300000 and 320000;
++------+-----------+-------------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name      | emailId           | designation | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-----------+-------------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+|  106 | chhaya    | cha@gmail.com     | analyst     | 987988378 |   23 | 1997-06-05 | 2019-02-15 | 300000 |     50 | o+         |
+|  107 | rahul     | ra23@gmail.com    | tester      | 987988378 |   23 | 1997-06-05 | 2019-02-05 | 300000 |     20 | o+         |
+|  108 | amritha   | amu23@gmail.com   | clerk       | 987980978 |   23 | 1997-05-05 | 2019-02-07 | 300000 |     20 | a+         |
+|  109 | prashanth | prash23@gmail.com | analyst     | 987980988 |   23 | 1997-09-05 | 2019-02-08 | 320000 |     20 | o+         |
+|  111 | karan     | karan@gmail.com   | salesman    | 889980988 |   20 | 1999-09-05 | 2019-06-08 | 300000 |     20 | b+         |
+|  115 | sriya     | sri12@gmail.com   | hr          | 985686458 |   22 | 1996-02-04 | 2019-07-08 | 320000 |     10 | a+         |
++------+-----------+-------------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+
+
+44 write a query to display all the details of employee who hired in 2019
+mysql> select * from  employee_info where doj between '2019-01-01' and '2019-06-03';
++------+-----------+-------------------+--------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name      | emailId           | designation  | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-----------+-------------------+--------------+-----------+------+------------+------------+--------+--------+------------+
+|  102 | bhakti    | bhak12@gmail.com  | hr           | 987655678 |   21 | 1997-10-06 | 2019-04-15 | 340000 |     30 | b+         |
+|  103 | aradhya   | radh2@gmail.com   | clerk        | 987655678 |   25 | 1997-08-06 | 2019-03-15 | 360000 |     40 | a+         |
+|  104 | mathhew   | math2@gmail.com   | salesman     | 987665378 |   23 | 1997-08-05 | 2019-03-15 | 330000 |     20 | b+         |
+|  105 | alisha    | ali@gmail.com     | hr           | 987988378 |   22 | 1997-09-05 | 2019-05-15 | 390000 |     20 | o+         |
+|  106 | chhaya    | cha@gmail.com     | analyst      | 987988378 |   23 | 1997-06-05 | 2019-02-15 | 300000 |     50 | o+         |
+|  107 | rahul     | ra23@gmail.com    | tester       | 987988378 |   23 | 1997-06-05 | 2019-02-05 | 300000 |     20 | o+         |
+|  108 | amritha   | amu23@gmail.com   | clerk        | 987980978 |   23 | 1997-05-05 | 2019-02-07 | 300000 |     20 | a+         |
+|  109 | prashanth | prash23@gmail.com | analyst      | 987980988 |   23 | 1997-09-05 | 2019-02-08 | 320000 |     20 | o+         |
+|  110 | jinni     | jinny@gmail.com   | tester       | 887980988 |   26 | 1995-09-05 | 2019-02-08 | 380000 |     20 | o+         |
+|  112 | finny     | finny@gmail.com   | softdevloper | 889986788 |   21 | 1999-04-05 | 2019-05-08 | 340000 |     20 | b+         |
++------+-----------+-------------
+
+
+ 45 write a query to display all the details of employee who was not  hired in 2019
+select * from  employee_info where doj not  between '2019-01-01' and '2019-06-03';
++------+--------+------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name   | emailId          | designation       | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+--------+------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+|  101 | jenny  | jenn12@gmail.com | software engineer | 987654321 |   21 | 1996-10-26 | 2019-07-15 | 350000 |     20 | o+         |
+|  111 | karan  | karan@gmail.com  | salesman          | 889980988 |   20 | 1999-09-05 | 2019-06-08 | 300000 |     20 | b+         |
+|  113 | anjali | anji@gmail.com   | software engineer | 989986658 |   24 | 1993-03-05 | 2019-08-08 | 350000 |     10 | a+         |
+|  114 | aishu  | aish@gmail.com   | clerk             | 989986458 |   22 | 1993-04-05 | 2019-08-08 | 350000 |     20 | a+         |
+|  115 | sriya  | sri12@gmail.com  | hr                | 985686458 |   22 | 1996-02-04 | 2019-07-08 | 320000 |     10 | a+         |
++------+--------+------------------+----------------
+
+46 write a query to display employee name ,salary and dept id of all the employee who are  working in dept 10 or 20 excluding  employee whose salary is greater than or equal to 300000  and salary less than equal to  350000
+ mysql> select  name, salary , deptId from employee_info  where deptId in (10,20)and( salary not between 300000 and 350000 );
++--------+--------+--------+
+| name   | salary | deptId |
++--------+--------+--------+
+| alisha | 390000 |     20 |
+| jinni  | 380000 |     20 |
++--------+--------+--------+
+2 rows in set (0.00 sec)
+
+47 write a query to display employee name and annual salary if designation is null
+
+mysql> insert into employee_info (name,dob) values('deepu' ,'1997-10-10');
+Query OK, 1 row affected (0.18 sec)
+
+mysql> select* from employee_info ;
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name      | emailId           | designation       | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+|  101 | jenny     | jenn12@gmail.com  | software engineer | 987654321 |   21 | 1996-10-26 | 2019-07-15 | 350000 |     20 | o+         |
+|  102 | bhakti    | bhak12@gmail.com  | hr                | 987655678 |   21 | 1997-10-06 | 2019-04-15 | 340000 |     30 | b+         |
+|  103 | aradhya   | radh2@gmail.com   | clerk             | 987655678 |   25 | 1997-08-06 | 2019-03-15 | 360000 |     40 | a+         |
+|  104 | mathhew   | math2@gmail.com   | salesman          | 987665378 |   23 | 1997-08-05 | 2019-03-15 | 330000 |     20 | b+         |
+|  105 | alisha    | ali@gmail.com     | hr                | 987988378 |   22 | 1997-09-05 | 2019-05-15 | 390000 |     20 | o+         |
+|  106 | chhaya    | cha@gmail.com     | analyst           | 987988378 |   23 | 1997-06-05 | 2019-02-15 | 300000 |     50 | o+         |
+|  107 | rahul     | ra23@gmail.com    | tester            | 987988378 |   23 | 1997-06-05 | 2019-02-05 | 300000 |     20 | o+         |
+|  108 | amritha   | amu23@gmail.com   | clerk             | 987980978 |   23 | 1997-05-05 | 2019-02-07 | 300000 |     20 | a+         |
+|  109 | prashanth | prash23@gmail.com | analyst           | 987980988 |   23 | 1997-09-05 | 2019-02-08 | 320000 |     20 | o+         |
+|  110 | jinni     | jinny@gmail.com   | tester            | 887980988 |   26 | 1995-09-05 | 2019-02-08 | 380000 |     20 | o+         |
+|  111 | karan     | karan@gmail.com   | salesman          | 889980988 |   20 | 1999-09-05 | 2019-06-08 | 300000 |     20 | b+         |
+|  112 | finny     | finny@gmail.com   | softdevloper      | 889986788 |   21 | 1999-04-05 | 2019-05-08 | 340000 |     20 | b+         |
+|  113 | anjali    | anji@gmail.com    | software engineer | 989986658 |   24 | 1993-03-05 | 2019-08-08 | 350000 |     10 | a+         |
+|  114 | aishu     | aish@gmail.com    | clerk             | 989986458 |   22 | 1993-04-05 | 2019-08-08 | 350000 |     20 | a+         |
+|  115 | sriya     | sri12@gmail.com   | hr                | 985686458 |   22 | 1996-02-04 | 2019-07-08 | 320000 |     10 | a+         |
+| NULL | deepu     | NULL              | NULL              |      NULL | NULL | 1997-10-10 | NULL       |   NULL |   NULL | NULL       |
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+16 rows in set (0.00 sec)
+
+48 mysql> select name, salary from employee_info where age is null ;
++-------+--------+
+| name  | salary |
++-------+--------+
+| deepu |   NULL |
++-------+--------+
+1 row in set (0.03 sec)
+
+mysql> select name, salary from employee_info where age is not  null ;
++-----------+--------+
+| name      | salary |
++-----------+--------+
+| jenny     | 350000 |
+| bhakti    | 340000 |
+| aradhya   | 360000 |
+| mathhew   | 330000 |
+| alisha    | 390000 |
+| chhaya    | 300000 |
+| rahul     | 300000 |
+| amritha   | 300000 |
+| prashanth | 320000 |
+| jinni     | 380000 |
+| karan     | 300000 |
+| finny     | 340000 |
+| anjali    | 350000 |
+| aishu     | 350000 |
+| sriya     | 320000 |
++-----------+--------+
+15 rows in set (0.00 sec)
+
+49 write a query to display all the detail of employee whose name start with s
+mysql> select * from employee_info where name like 's%' ;
++------+-------+-----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name  | emailId         | designation | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-------+-----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+|  115 | sriya | sri12@gmail.com | hr          | 985686458 |   22 | 1996-02-04 | 2019-07-08 | 320000 |     10 | a+         |
++------+-------+-----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+1 row in set (0.00 sec)
+
+mysql> select * from employee_info where name like 'a%' ;
++------+---------+-----------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name    | emailId         | designation       | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+---------+-----------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+|  103 | aradhya | radh2@gmail.com | clerk             | 987655678 |   25 | 1997-08-06 | 2019-03-15 | 360000 |     40 | a+         |
+|  105 | alisha  | ali@gmail.com   | hr                | 987988378 |   22 | 1997-09-05 | 2019-05-15 | 390000 |     20 | o+         |
+|  108 | amritha | amu23@gmail.com | clerk             | 987980978 |   23 | 1997-05-05 | 2019-02-07 | 300000 |     20 | a+         |
+|  113 | anjali  | anji@gmail.com  | software engineer | 989986658 |   24 | 1993-03-05 | 2019-08-08 | 350000 |     10 | a+         |
+|  114 | aishu   | aish@gmail.com  | clerk             | 989986458 |   22 | 1993-04-05 | 2019-08-08 | 350000 |     20 | a+         |
++------+---------+-----------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+50 write a query to display all the details of the employee whose name contiains only 5 character;
+mysql> select * from employee_info where name like '_____';
++------+-------+------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name  | emailId          | designation       | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-------+------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+|  101 | jenny | jenn12@gmail.com | software engineer | 987654321 |   21 | 1996-10-26 | 2019-07-15 | 350000 |     20 | o+         |
+|  107 | rahul | ra23@gmail.com   | tester            | 987988378 |   23 | 1997-06-05 | 2019-02-05 | 300000 |     20 | o+         |
+|  110 | jinni | jinny@gmail.com  | tester            | 887980988 |   26 | 1995-09-05 | 2019-02-08 | 380000 |     20 | o+         |
+|  111 | karan | karan@gmail.com  | salesman          | 889980988 |   20 | 1999-09-05 | 2019-06-08 | 300000 |     20 | b+         |
+|  112 | finny | finny@gmail.com  | softdevloper      | 889986788 |   21 | 1999-04-05 | 2019-05-08 | 340000 |     20 | b+         |
+|  114 | aishu | aish@gmail.com   | clerk             | 989986458 |   22 | 1993-04-05 | 2019-08-08 | 350000 |     20 | a+         |
+|  115 | sriya | sri12@gmail.com  | hr                | 985686458 |   22 | 1996-02-04 | 2019-07-08 | 320000 |     10 | a+         |
+| NULL | deepu | NULL             | NULL              |      NULL | NULL | 1997-10-10 | NULL       |   NULL |   NULL | NULL       |
++------+-------+------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+
+51 write a query to display name salary dob doj age whose name start with s and endwith s
+mysql> select name,salary,dob,doj,age from employee_info where name like 's%s';
+Empty set (0.00 sec)
+
+mysql> select name,salary,dob,doj,age from employee_info where name like 'a%a';
++---------+--------+------------+------------+------+
+| name    | salary | dob        | doj        | age  |
++---------+--------+------------+------------+------+
+| aradhya | 360000 | 1997-08-06 | 2019-03-15 |   25 |
+| alisha  | 390000 | 1997-09-05 | 2019-05-15 |   22 |
+| amritha | 300000 | 1997-05-05 | 2019-02-07 |   23 |
++---------+--------+------------+------------+------+
+
+
+ 52waqtd employee details whose second character is i
+mysql> select * from employee_info where name like '_l%';
++------+--------+---------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name   | emailId       | designation | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+--------+---------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+|  105 | alisha | ali@gmail.com | hr          | 987988378 |   22 | 1997-09-05 | 2019-05-15 | 390000 |     20 | o+         |
++------+--------+---------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+1 row in set (0.00 sec)
+
+53 mysql> select * from employee_info where name like '_r%';
++------+-----------+-------------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name      | emailId           | designation | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-----------+-------------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+|  103 | aradhya   | radh2@gmail.com   | clerk       | 987655678 |   25 | 1997-08-06 | 2019-03-15 | 360000 |     40 | a+         |
+|  109 | prashanth | prash23@gmail.com | analyst     | 987980988 |   23 | 1997-09-05 | 2019-02-08 | 320000 |     20 | o+         |
+|  115 | sriya     | sri12@gmail.com   | hr          | 985686458 |   22 | 1996-02-04 | 2019-07-08 | 320000 |     10 | a+         |
+
+54 waqtd all the employee details where designation hve atleast 2 ee;
+mysql> select * from employee_info where designation like '%e%e%';
++------+--------+------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name   | emailId          | designation       | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+--------+------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+|  101 | jenny  | jenn12@gmail.com | software engineer | 987654321 |   21 | 1996-10-26 | 2019-07-15 | 350000 |     20 | o+         |
+|  107 | rahul  | ra23@gmail.com   | tester            | 987988378 |   23 | 1997-06-05 | 2019-02-05 | 300000 |     20 | o+         |
+|  110 | jinni  | jinny@gmail.com  | tester            | 887980988 |   26 | 1995-09-05 | 2019-02-08 | 380000 |     20 | o+         |
+|  112 | finny  | finny@gmail.com  | softdevloper      | 889986788 |   21 | 1999-04-05 | 2019-05-08 | 340000 |     20 | b+         |
+|  113 | anjali | anji@gmail.com   | software engineer | 989986658 |   24 | 1993-03-05 | 2019-08-08 | 350000 |     10 | a+         |
++------+--------+------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+
+55 waqtd to select all the string of length 5 that starts with r and second last char of string is l
+
+mysql> select * from employee_info where name like 'r___l' ;
++------+-------+----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name  | emailId        | designation | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-------+----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+|  107 | rahul | ra23@gmail.com | tester      | 987988378 |   23 | 1997-06-05 | 2019-02-05 | 300000 |     20 | o+         |
++------+-------+----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+1 row in set (0.00 sec)
+
+mysql> select * from employee_info where name like 'f___y' ;
++------+-------+-----------------+--------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name  | emailId         | designation  | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-------+-----------------+--------------+-----------+------+------------+------------+--------+--------+------------+
+|  112 | finny | finny@gmail.com | softdevloper | 889986788 |   21 | 1999-04-05 | 2019-05-08 | 340000 |     20 | b+         |
++------+-------+-----------------+--------------+-----------+------+------------+------------+--------+--------+------------+
+1 row in set (0.00 sec)
+mysql> select * from employee_info where name like 'f__n_' ;
++------+-------+-----------------+--------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name  | emailId         | designation  | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-------+-----------------+--------------+-----------+------+------------+------------+--------+--------+------------+
+|  112 | finny | finny@gmail.com | softdevloper | 889986788 |   21 | 1999-04-05 | 2019-05-08 | 340000 |     20 | b+         |
++------+-------+-----------------+--------------+-----------+------+------------+------------+--------+--------+------------+
+1 row in set (0.00 sec)
+
+56 write a query to display all details of employee if the name of employee starts with r or start with z
+
+mysql> select * from employee_info where name like 'r%' or 'z%';
++------+-------+----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name  | emailId        | designation | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-------+----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+|  107 | rahul | ra23@gmail.com | tester      | 987988378 |   23 | 1997-06-05 | 2019-02-05 | 300000 |     20 | o+         |
++------+-------+----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> select * from employee_info where name like 'r%' or name like  'z%';
++------+-------+----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name  | emailId        | designation | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-------+----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+|  107 | rahul | ra23@gmail.com | tester      | 987988378 |   23 | 1997-06-05 | 2019-02-05 | 300000 |     20 | o+         |
+mysql> select * from employee_info where name like 'r%' or 'z%';
++------+-------+----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name  | emailId        | designation | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-------+----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+|  107 | rahul | ra23@gmail.com | tester      | 987988378 |   23 | 1997-06-05 | 2019-02-05 | 300000 |     20 | o+         |
++------+-------+----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> select * from employee_info where name like 'r%' or name like  'z%';
++------+-------+----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name  | emailId        | designation | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-------+----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+|  107 | rahul | ra23@gmail.com | tester      | 987988378 |   23 | 1997-06-05 | 2019-02-05 | 300000 |     20 | o+         |
++------+-------+----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+1 row in set (0.00 sec)
+
+mysql> select * from employee_info where name like 'r%' or name like  'k%';
++------+-------+-----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name  | emailId         | designation | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-------+-----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+|  107 | rahul | ra23@gmail.com  | tester      | 987988378 |   23 | 1997-06-05 | 2019-02-05 | 300000 |     20 | o+         |
+|  111 | karan | karan@gmail.com | salesman    | 889980988 |   20 | 1999-09-05 | 2019-06-08 | 300000 |     20 | b+         |
++------+-------+-----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+2 rows in set (0.00 sec)
+
+57 waqtd to displAY all the recods of an employee whose name in 3rd char should be c sixth char should ne i
+mysql> select * from employee_info where name like '__c__i' ;
+Empty set (0.00 sec)
+
+mysql> select * from employee_info where name like '__i__a' ;
++------+--------+---------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name   | emailId       | designation | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+--------+---------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+|  105 | alisha | ali@gmail.com | hr          | 987988378 |   22 | 1997-09-05 | 2019-05-15 | 390000 |     20 | o+         |
++------+--------+---------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+1 row in set (0.00 sec)
+
+58 waqtd all the employee details excluding whose name start with a
+mysql> select * from employee_info where name not like 'a%';
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name      | emailId           | designation       | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+|  101 | jenny     | jenn12@gmail.com  | software engineer | 987654321 |   21 | 1996-10-26 | 2019-07-15 | 350000 |     20 | o+         |
+|  102 | bhakti    | bhak12@gmail.com  | hr                | 987655678 |   21 | 1997-10-06 | 2019-04-15 | 340000 |     30 | b+         |
+|  104 | mathhew   | math2@gmail.com   | salesman          | 987665378 |   23 | 1997-08-05 | 2019-03-15 | 330000 |     20 | b+         |
+|  106 | chhaya    | cha@gmail.com     | analyst           | 987988378 |   23 | 1997-06-05 | 2019-02-15 | 300000 |     50 | o+         |
+|  107 | rahul     | ra23@gmail.com    | tester            | 987988378 |   23 | 1997-06-05 | 2019-02-05 | 300000 |     20 | o+         |
+|  109 | prashanth | prash23@gmail.com | analyst           | 987980988 |   23 | 1997-09-05 | 2019-02-08 | 320000 |     20 | o+         |
+|  110 | jinni     | jinny@gmail.com   | tester            | 887980988 |   26 | 1995-09-05 | 2019-02-08 | 380000 |     20 | o+         |
+|  111 | karan     | karan@gmail.com   | salesman          | 889980988 |   20 | 1999-09-05 | 2019-06-08 | 300000 |     20 | b+         |
+|  112 | finny     | finny@gmail.com   | softdevloper      | 889986788 |   21 | 1999-04-05 | 2019-05-08 | 340000 |     20 | b+         |
+|  115 | sriya     | sri12@gmail.com   | hr                | 985686458 |   22 | 1996-02-04 | 2019-07-08 | 320000 |     10 | a+         |
+| NULL | deepu     | NULL              | NULL              |      NULL | NULL | 1997-10-10 | NULL       |   NULL |   NULL | NULL       |
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+11 rows in set (0.00 sec)
+
+ 59 mysql>write a query to display the average salry of empo;
+mysql> select avg(salary) from employee_info;
++-------------------+
+| avg(salary)       |
++-------------------+
+| 335333.3333333333 |
++-------------------+
+
++------+-------+----------------+-------------+-----------+------+------------+--
+
+mysql> select avg(salary) from employee_info;
++-------------------+
+| avg(salary)       |
++-------------------+
+| 335333.3333333333 |
++-------------------+
+1 row in set (0.06 sec)
+
+60 mysql> select max(age) from employee_info;
++----------+
+| max(age) |
++----------+
+|       26 |
++----------+
+1 row in set (0.04 sec)
+
+61) mysql> select min(age) from employee_info;
++----------+
+| min(age) |
++----------+
+|       20 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select count(id) from employee_info;
++-----------+
+| count(id) |
++-----------+
+|        15 |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> select * from avg(salary)  Average from employee_info;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(salary)  Average from employee_info' at line 1
+mysql> select min(salary)  minimum from employee_info;
++---------+
+| minimum |
++---------+
+|  300000 |
++---------+
+1 row in set (0.04 sec)
+
+mysql> select max(salary)  maximum from employee_info;
++---------+
+| maximum |
++---------+
+|  390000 |
++---------+
+1 row in set (0.00 sec)
+
+70) mysql> select avg(salary)  Average , max(salary) Maximum,min(salary) Minimum,count(id) Count,sum(salary) Sum from employee_info ;
++-------------------+---------+---------+-------+---------+
+| Average           | Maximum | Minimum | Count | Sum     |
++-------------------+---------+---------+-------+---------+
+| 335333.3333333333 |  390000 |  300000 |    15 | 5030000 |
++-------------------+---------+---------+-------+---------+
+1 row in set (0.00 sec)
+
+mysql>
+
+DATE:16 August 2019
+
+71) WAQ to display no. of employees hired after 2016
+
+
+
+mysql> select count(*) from employee_info where doj > '2016 - 12-31' ;
++----------+
+| count(*) |
++----------+
+|       15 |
++----------+
+1 row in set, 1 warning (0.08 sec)
+
+mysql>
+72) waq to display avg salary and highest salary of dept 20,30,40 and 60.
+
+mysql> select avg(salary) , max(salary) from employee_info  where deptId  in (20,30,40,60);
++-------------------+-------------+
+| avg(salary)       | max(salary) |
++-------------------+-------------+
+| 338333.3333333333 |      390000 |
++-------------------+-------------+
+1 row in set (0.03 sec)
+
+73) waq to display date of first and last hired employee;
+
+mysql>  select min(doj) ,max(doj) from employee_info;
++------------+------------+
+| min(doj)   | max(doj)   |
++------------+------------+
+| 2019-02-05 | 2019-08-08 |
++------------+------------+
+1 row in set (0.00 sec)
+
+mysql>  select min(doj) First_hired ,max(doj) Last_hired from employee_info;
++-------------+------------+
+| First_hired | Last_hired |
++-------------+------------+
+| 2019-02-05  | 2019-08-08 |
++-------------+------------+
+1 row in set (0.05 sec)
+
+74)SCALAR
+mysql> select upper(name) from employee_info;
++-------------+
+| upper(name) |
++-------------+
+| JENNY       |
+| BHAKTI      |
+| ARADHYA     |
+| MATHHEW     |
+| ALISHA      |
+| CHHAYA      |
+| RAHUL       |
+| AMRITHA     |
+| PRASHANTH   |
+| JINNI       |
+| KARAN       |
+| FINNY       |
+| ANJALI      |
+| AISHU       |
+| SRIYA       |
+| DEEPU       |
++-------------+
+16 rows in set (0.05 sec)
+
+mysql> select lower(designation) from employee_info;
++--------------------+
+| lower(designation) |
++--------------------+
+| software engineer  |
+| hr                 |
+| clerk              |
+| salesman           |
+| hr                 |
+| analyst            |
+| tester             |
+| clerk              |
+| analyst            |
+| tester             |
+| salesman           |
+| softdevloper       |
+| software engineer  |
+| clerk              |
+| hr                 |
+| NULL               |
++--------------------+
+16 rows in set (0.02 sec)
+75)WAQ  to display length
+
+mysql> select length(name) from employee_info;
++--------------+
+| length(name) |
++--------------+
+|            5 |
+|            6 |
+|            7 |
+|            7 |
+|            6 |
+|            6 |
+|            5 |
+|            7 |
+|            9 |
+|            5 |
+|            5 |
+|            5 |
+|            6 |
+|            5 |
+|            5 |
+|            5 |
++--------------+
+76)WAQ TO merge name and salary.
+mysql> select concat (name,salary) from employee_info;
++----------------------+
+| concat (name,salary) |
++----------------------+
+| jenny350000          |
+| bhakti340000         |
+| aradhya360000        |
+| mathhew330000        |
+| alisha390000         |
+| chhaya300000         |
+| rahul300000          |
+| amritha300000        |
+| prashanth320000      |
+| jinni380000          |
+| karan300000          |
+| finny340000          |
+| anjali350000         |
+| aishu350000          |
+| sriya320000          |
+| NULL                 |
++----------------------+
+
+77)WAQ  reverse
+
+mysql> select reverse (name) from employee_info;
++----------------+
+| reverse (name) |
++----------------+
+| ynnej          |
+| itkahb         |
+| ayhdara        |
+| wehhtam        |
+| ahsila         |
+| ayahhc         |
+| luhar          |
+| ahtirma        |
+| htnahsarp      |
+| innij          |
+| narak          |
+| ynnif          |
+| ilajna         |
+| uhsia          |
+| ayirs          |
+| upeed          |
++----------------+
+16 rows in set (0.00 sec)
+
+mysql> select reverse (designation) from employee_info;
++-----------------------+
+| reverse (designation) |
++-----------------------+
+| reenigne erawtfos     |
+| rh                    |
+| krelc                 |
+| namselas              |
+| rh                    |
+| tsylana               |
+| retset                |
+| krelc                 |
+| tsylana               |
+| retset                |
+| namselas              |
+| repolvedtfos          |
+| reenigne erawtfos     |
+| krelc                 |
+| rh                    |
+| NULL                  |
++-----------------------+
+78)WAQ to display the name of employees only 3 charcter.
+mysql> select substr(name,1,3) from employee_info;
++------------------+
+| substr(name,1,3) |
++------------------+
+| jen              |
+| bha              |
+| ara              |
+| mat              |
+| ali              |
+| chh              |
+| rah              |
+| amr              |
+| pra              |
+| jin              |
+| kar              |
+| fin              |
+| anj              |
+| ais              |
+| sri              |
+| dee              |
++------------------+
+16 rows in set (0.00 sec)
+
+mysql>'
+79)WAQ to display all the details of employees whose name begins with consonant
+mysql> select * from employee_info where substr(name,1,1) not in ('a','e', 'i ', 'o', 'u');
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name      | emailId           | designation       | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+|  101 | jenny     | jenn12@gmail.com  | software engineer | 987654321 |   21 | 1996-10-26 | 2019-07-15 | 350000 |     20 | o+         |
+|  102 | bhakti    | bhak12@gmail.com  | hr                | 987655678 |   21 | 1997-10-06 | 2019-04-15 | 340000 |     30 | b+         |
+|  104 | mathhew   | math2@gmail.com   | salesman          | 987665378 |   23 | 1997-08-05 | 2019-03-15 | 330000 |     20 | b+         |
+|  106 | chhaya    | cha@gmail.com     | analyst           | 987988378 |   23 | 1997-06-05 | 2019-02-15 | 300000 |     50 | o+         |
+|  107 | rahul     | ra23@gmail.com    | tester            | 987988378 |   23 | 1997-06-05 | 2019-02-05 | 300000 |     20 | o+         |
+|  109 | prashanth | prash23@gmail.com | analyst           | 987980988 |   23 | 1997-09-05 | 2019-02-08 | 320000 |     20 | o+         |
+|  110 | jinni     | jinny@gmail.com   | tester            | 887980988 |   26 | 1995-09-05 | 2019-02-08 | 380000 |     20 | o+         |
+|  111 | karan     | karan@gmail.com   | salesman          | 889980988 |   20 | 1999-09-05 | 2019-06-08 | 300000 |     20 | b+         |
+|  112 | finny     | finny@gmail.com   | softdevloper      | 889986788 |   21 | 1999-04-05 | 2019-05-08 | 340000 |     20 | b+         |
+|  115 | sriya     | sri12@gmail.com   | hr                | 985686458 |   22 | 1996-02-04 | 2019-07-08 | 320000 |     10 | a+         |
+| NULL | deepu     | NULL              | NULL              |      NULL | NULL | 1997-10-10 | NULL       |   NULL |   NULL | NULL       |
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+
+80)WAQ to search the position of A in the name column.
+
+mysql> select instr(name,'a')  from employee_info;
++-----------------+
+| instr(name,'a') |
++-----------------+
+|               0 |
+|               3 |
+|               1 |
+|               2 |
+|               1 |
+|               4 |
+|               2 |
+|               1 |
+|               3 |
+|               0 |
+|               2 |
+|               0 |
+|               1 |
+|               1 |
+|               5 |
+|               0 |
++-----------------+
+81) WAQ to replace where a is present in the name z
+mysql> select  replace(name,'a', 'z' ) from employee_info;
++-------------------------+
+| replace(name,'a', 'z' ) |
++-------------------------+
+| jenny                   |
+| bhzkti                  |
+| zrzdhyz                 |
+| mzthhew                 |
+| zlishz                  |
+| chhzyz                  |
+| rzhul                   |
+| zmrithz                 |
+| przshznth               |
+| jinni                   |
+| kzrzn                   |
+| finny                   |
+| znjzli                  |
+| zishu                   |
+| sriyz                   |
+| deepu                   |
++-------------------------+
+
+82)WAQ to display no. of employees who is working in dept no 20 and salary greater than 15k;
+mysql> select count(*) from employee_info where designation= 'softdevloper'  group by deptId ;
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+mysql> select count(*) from employee_info where deptId = (20) and  salary =340000 ;
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select count(*) from employee_info where deptId = (20) and  salary =380000 ;
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select count(*) from employee_info where deptId = (20) and  salary =350000 ;
++----------+
+| count(*) |
++----------+
+|        2 |
++----------+
+1 row in set (0.00 sec)
+83) WAQ to display highest salary of employee in each department.
+ysql> select max(salary)  from employee_info  group by deptId ;
++-------------+
+| max(salary) |
++-------------+
+|        NULL |
+|      350000 |
+|      390000 |
+|      340000 |
+|      360000 |
+|      300000 |
+
+84)WAQ to display no.of soft developer working in each department.
+mysql> select count(*) from employee_info where designation= 'softdevloper'  group by deptId ;
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.00 sec)
+ 
+85)write a query to display no. of employees hired on each date.
+mysql> select count(*)   from employee_info  group by doj ;
++----------+
+| count(*) |
++----------+
+|        1 |
+|        1 |
+|        1 |
+|        2 |
+|        1 |
+|        2 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        2 |
++----------+
+13 rows in set (0.00 sec)
+
+mysql> select count(*), doj   from employee_info  group by doj ;
++----------+------------+
+| count(*) | doj        |
++----------+------------+
+|        1 | NULL       |
+|        1 | 2019-02-05 |
+|        1 | 2019-02-07 |
+|        2 | 2019-02-08 |
+|        1 | 2019-02-15 |
+|        2 | 2019-03-15 |
+|        1 | 2019-04-15 |
+|        1 | 2019-05-08 |
+|        1 | 2019-05-15 |
+|        1 | 2019-06-08 |
+|        1 | 2019-07-08 |
+|        1 | 2019-07-15 |
+|        2 | 2019-08-08 |
++----------+------------+
+
+86)  WAQ to display minm salary in each designation.
+mysql> select min(salary) from employee_info group by designation;
++-------------+
+| min(salary) |
++-------------+
+|        NULL |
+|      300000 |
+|      300000 |
+|      320000 |
+|      300000 |
+|      340000 |
+|      350000 |
+|      300000 |
++-------------+
+8 rows in set (0.00 sec)
+
+mysql> select min(salary), designation  from employee_info group by designation;
++-------------+-------------------+
+| min(salary) | designation       |
++-------------+-------------------+
+|        NULL | NULL              |
+|      300000 | analyst           |
+|      300000 | clerk             |
+|      320000 | hr                |
+|      300000 | salesman          |
+|      340000 | softdevloper      |
+|      350000 | software engineer |
+|      300000 | tester            |
++-------------+-------------------+
+
+87) WAQ  to display deptno which has atleast 4 working employees.
+mysql> select deptId from employee_info group by deptId having count(*)=2;
++--------+
+| deptId |
++--------+
+|     10 |
++--------+
+88) WAQ to display deptid having total salary greater than 
+mysql> select deptId from employee_info group by deptId having  max(salary) >= 350000;
++--------+
+| deptId |
++--------+
+|     10 |
+|     20 |
+|     40 |
++--------+
+3 rows in set (0.00 sec)
+
+mysql> select deptId from employee_info group by deptId having  sum(salary) >= 350000;
++--------+
+| deptId |
++--------+
+|     10 |
+|     20 |
+|     40 |
++--------+
+3 rows in set (0.00 sec)
+
+mysql> select deptId from employee_info group by deptId having  sum(salary) >= 300000;
++--------+
+| deptId |
++--------+
+|     10 |
+|     20 |
+|     30 |
+|     40 |
+|     50 |
++--------+
+5 rows in set (0.00 sec)
+
+mysql> select deptId, salary from employee_info group by deptId having  sum(salary) >= 300000;
++--------+--------+
+| deptId | salary |
++--------+--------+
+|     10 | 350000 |
+|     20 | 350000 |
+|     30 | 340000 |
+|     40 | 360000 |
+|     50 | 300000 |
++--------+--------+
+5 rows in set (0.00 sec)
+89) WAQ to display dept id and avg salry of all deptid whose avg salry i>20000  excluding the employee whose name begin with s.
+mysql> select deptId ,avg(salary) from employee_info where name not like 's%' group by deptId having  avg(salary)< 350000;
++--------+-------------+
+| deptId | avg(salary) |
++--------+-------------+
+|     20 |      336000 |
+|     30 |      340000 |
+|     50 |      300000 |
++--------+-------------+
+3 rows in set (0.02 sec)
+
+mysql> select deptId ,avg(salary), name from employee_info where name not like 's%' group by deptId having  avg(salary)< 350000;
++--------+-------------+--------+
+| deptId | avg(salary) | name   |
++--------+-------------+--------+
+|     20 |      336000 | jenny  |
+|     30 |      340000 | bhakti |
+|     50 |      300000 | chhaya |
++--------+-------------+--------+
+3 rows in set (0.00 sec)
+
+mysql> select deptId ,avg(salary), name from employee_info where name not like 's%' group by deptId having  avg(salary)> 20000;
++--------+-------------+---------+
+| deptId | avg(salary) | name    |
++--------+-------------+---------+
+|     10 |      350000 | anjali  |
+|     20 |      336000 | jenny   |
+|     30 |      340000 | bhakti  |
+|     40 |      360000 | aradhya |
+|     50 |      300000 | chhaya  |
++--------+-------------+---------+
+5 rows in set (0.00 sec)
+
+90) WAQ to display all the results of the employee_info table salary should be arranged in decending order.
+
+mysql> select * from employee_info order by salary desc;
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name      | emailId           | designation       | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+|  105 | alisha    | ali@gmail.com     | hr                | 987988378 |   22 | 1997-09-05 | 2019-05-15 | 390000 |     20 | o+         |
+|  110 | jinni     | jinny@gmail.com   | tester            | 887980988 |   26 | 1995-09-05 | 2019-02-08 | 380000 |     20 | o+         |
+|  103 | aradhya   | radh2@gmail.com   | clerk             | 987655678 |   25 | 1997-08-06 | 2019-03-15 | 360000 |     40 | a+         |
+|  101 | jenny     | jenn12@gmail.com  | software engineer | 987654321 |   21 | 1996-10-26 | 2019-07-15 | 350000 |     20 | o+         |
+|  113 | anjali    | anji@gmail.com    | software engineer | 989986658 |   24 | 1993-03-05 | 2019-08-08 | 350000 |     10 | a+         |
+|  114 | aishu     | aish@gmail.com    | clerk             | 989986458 |   22 | 1993-04-05 | 2019-08-08 | 350000 |     20 | a+         |
+|  102 | bhakti    | bhak12@gmail.com  | hr                | 987655678 |   21 | 1997-10-06 | 2019-04-15 | 340000 |     30 | b+         |
+|  112 | finny     | finny@gmail.com   | softdevloper      | 889986788 |   21 | 1999-04-05 | 2019-05-08 | 340000 |     20 | b+         |
+|  104 | mathhew   | math2@gmail.com   | salesman          | 987665378 |   23 | 1997-08-05 | 2019-03-15 | 330000 |     20 | b+         |
+|  109 | prashanth | prash23@gmail.com | analyst           | 987980988 |   23 | 1997-09-05 | 2019-02-08 | 320000 |     20 | o+         |
+|  115 | sriya     | sri12@gmail.com   | hr                | 985686458 |   22 | 1996-02-04 | 2019-07-08 | 320000 |     10 | a+         |
+|  106 | chhaya    | cha@gmail.com     | analyst           | 987988378 |   23 | 1997-06-05 | 2019-02-15 | 300000 |     50 | o+         |
+|  107 | rahul     | ra23@gmail.com    | tester            | 987988378 |   23 | 1997-06-05 | 2019-02-05 | 300000 |     20 | o+         |
+|  108 | amritha   | amu23@gmail.com   | clerk             | 987980978 |   23 | 1997-05-05 | 2019-02-07 | 300000 |     20 | a+         |
+|  111 | karan     | karan@gmail.com   | salesman          | 889980988 |   20 | 1999-09-05 | 2019-06-08 | 300000 |     20 | b+         |
+| NULL | deepu     | NULL              | NULL              |      NULL | NULL | 1997-10-10 | NULL       |   NULL |   NULL | NULL       |
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+
+//by default always in ascending order
+mysql> select * from employee_info order by salary;
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+| id   | name      | emailId           | designation       | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup |
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+| NULL | deepu     | NULL              | NULL              |      NULL | NULL | 1997-10-10 | NULL       |   NULL |   NULL | NULL       |
+|  106 | chhaya    | cha@gmail.com     | analyst           | 987988378 |   23 | 1997-06-05 | 2019-02-15 | 300000 |     50 | o+         |
+|  107 | rahul     | ra23@gmail.com    | tester            | 987988378 |   23 | 1997-06-05 | 2019-02-05 | 300000 |     20 | o+         |
+|  108 | amritha   | amu23@gmail.com   | clerk             | 987980978 |   23 | 1997-05-05 | 2019-02-07 | 300000 |     20 | a+         |
+|  111 | karan     | karan@gmail.com   | salesman          | 889980988 |   20 | 1999-09-05 | 2019-06-08 | 300000 |     20 | b+         |
+|  109 | prashanth | prash23@gmail.com | analyst           | 987980988 |   23 | 1997-09-05 | 2019-02-08 | 320000 |     20 | o+         |
+|  115 | sriya     | sri12@gmail.com   | hr                | 985686458 |   22 | 1996-02-04 | 2019-07-08 | 320000 |     10 | a+         |
+|  104 | mathhew   | math2@gmail.com   | salesman          | 987665378 |   23 | 1997-08-05 | 2019-03-15 | 330000 |     20 | b+         |
+|  102 | bhakti    | bhak12@gmail.com  | hr                | 987655678 |   21 | 1997-10-06 | 2019-04-15 | 340000 |     30 | b+         |
+|  112 | finny     | finny@gmail.com   | softdevloper      | 889986788 |   21 | 1999-04-05 | 2019-05-08 | 340000 |     20 | b+         |
+|  101 | jenny     | jenn12@gmail.com  | software engineer | 987654321 |   21 | 1996-10-26 | 2019-07-15 | 350000 |     20 | o+         |
+|  113 | anjali    | anji@gmail.com    | software engineer | 989986658 |   24 | 1993-03-05 | 2019-08-08 | 350000 |     10 | a+         |
+|  114 | aishu     | aish@gmail.com    | clerk             | 989986458 |   22 | 1993-04-05 | 2019-08-08 | 350000 |     20 | a+         |
+|  103 | aradhya   | radh2@gmail.com   | clerk             | 987655678 |   25 | 1997-08-06 | 2019-03-15 | 360000 |     40 | a+         |
+|  110 | jinni     | jinny@gmail.com   | tester            | 887980988 |   26 | 1995-09-05 | 2019-02-08 | 380000 |     20 | o+         |
+|  105 | alisha    | ali@gmail.com     | hr                | 987988378 |   22 | 1997-09-05 | 2019-05-15 | 390000 |     20 | o+         |
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+
+
+91) WAQ to display employee name ,designation, doj for all employeees who are working in either one of thhe depts 10,20,50 ,60 sort the records in desc  order of their salary
+mysql> select name,designation, doj from employee_info where deptId in (10,20,50,60) order by salary desc;
++-----------+-------------------+------------+
+| name      | designation       | doj        |
++-----------+-------------------+------------+
+| alisha    | hr                | 2019-05-15 |
+| jinni     | tester            | 2019-02-08 |
+| jenny     | software engineer | 2019-07-15 |
+| anjali    | software engineer | 2019-08-08 |
+| aishu     | clerk             | 2019-08-08 |
+| finny     | softdevloper      | 2019-05-08 |
+| mathhew   | salesman          | 2019-03-15 |
+| prashanth | analyst           | 2019-02-08 |
+| sriya     | hr                | 2019-07-08 |
+| chhaya    | analyst           | 2019-02-15 |
+| rahul     | tester            | 2019-02-05 |
+| amritha   | clerk             | 2019-02-07 |
+| karan     | salesman          | 2019-06-08 |
++-----------+-------------------+------------+
+13 rows in set (0.00 sec)
+
+mysql> select name,designation, doj, salary,deptId from employee_info where deptId in (10,20,50,60) order by salary desc;
++-----------+-------------------+------------+--------+--------+
+| name      | designation       | doj        | salary | deptId |
++-----------+-------------------+------------+--------+--------+
+| alisha    | hr                | 2019-05-15 | 390000 |     20 |
+| jinni     | tester            | 2019-02-08 | 380000 |     20 |
+| jenny     | software engineer | 2019-07-15 | 350000 |     20 |
+| anjali    | software engineer | 2019-08-08 | 350000 |     10 |
+| aishu     | clerk             | 2019-08-08 | 350000 |     20 |
+| finny     | softdevloper      | 2019-05-08 | 340000 |     20 |
+| mathhew   | salesman          | 2019-03-15 | 330000 |     20 |
+| prashanth | analyst           | 2019-02-08 | 320000 |     20 |
+| sriya     | hr                | 2019-07-08 | 320000 |     10 |
+| chhaya    | analyst           | 2019-02-15 | 300000 |     50 |
+| rahul     | tester            | 2019-02-05 | 300000 |     20 |
+| amritha   | clerk             | 2019-02-07 | 300000 |     20 |
+| karan     | salesman          | 2019-06-08 | 300000 |     20 |
++-----------+-------------------+------------+--------+--------+
+
+
+92)WAQ to display deptid,along with no.of employee in it.
+mysql> select  count(id) from employee_info group by deptId;
++-----------+
+| count(id) |
++-----------+
+|         0 |
+|         2 |
+|        10 |
+|         1 |
+|         1 |
+|         1 |
++-----------+
+6 rows in set (0.00 sec)
+
+13 rows in set (0.00 sec)
+
+93)waq to create table department  which has deptid, dname varchar(150),location varchar(150)
+94)WAQ to display all the detail of employee whose designation is software developer and tester;
+95)WAQ to display name of the employee who is working for research dept.
+96)WAQ to display the name of the employee who is working in location which has atleast one a character in its name
+97)Waq to obtain 2nd max salary from employee info  table
+98)waq to display the third maxm salary
+99)WAQ to display to display all the records using cartesian join or cross join
+
+select name from employee_info where deptId = (select deptId from department_info where dname='research')
+select name from employee_info where deptId =20
+select name from employee_info where deptId in (select  deptId  from department_info where location like'%a%')
+select max(salary) from employee_info where salary < (select max(salary) from employee_info)
+
+select * from employee_info cross join department_info
+100)Inner join example
+   select * from employee_info  inner join department_info   on employee_info.deptId=department_info.deptId;
+101)Left outer join
+select * from employee_info left outer join department_info on employee_info.deptId= department_info.deptId;
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+--------+-----------+-----------+
+| id   | name      | emailId           | designation       | mobNo     | age  | dob        | doj        | salary | deptId | bloodgroup | deptId | dname     | location  |
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+--------+-----------+-----------+
+|  101 | jenny     | jenn12@gmail.com  | software engineer | 987654321 |   21 | 1996-10-26 | 2019-07-15 | 350000 |     20 | o+         |     20 | Research  | Pune      |
+|  102 | bhakti    | bhak12@gmail.com  | hr                | 987655678 |   21 | 1997-10-06 | 2019-04-15 | 340000 |     30 | b+         |     30 | Sales     | New Delhi |
+|  103 | aradhya   | radh2@gmail.com   | clerk             | 987655678 |   25 | 1997-08-06 | 2019-03-15 | 360000 |     40 | a+         |     40 | Operation | Chennai   |
+|  104 | mathhew   | math2@gmail.com   | salesman          | 987665378 |   23 | 1997-08-05 | 2019-03-15 | 330000 |     20 | b+         |     20 | Research  | Pune      |
+|  105 | alisha    | ali@gmail.com     | hr                | 987988378 |   22 | 1997-09-05 | 2019-05-15 | 390000 |     20 | o+         |     20 | Research  | Pune      |
+|  106 | chhaya    | cha@gmail.com     | analyst           | 987988378 |   23 | 1997-06-05 | 2019-02-15 | 300000 |     50 | o+         |     50 | Admin     | Mumbai    |
+|  107 | rahul     | ra23@gmail.com    | tester            | 987988378 |   23 | 1997-06-05 | 2019-02-05 | 300000 |     20 | o+         |     20 | Research  | Pune      |
+|  108 | amritha   | amu23@gmail.com   | clerk             | 987980978 |   23 | 1997-05-05 | 2019-02-07 | 300000 |     20 | a+         |     20 | Research  | Pune      |
+|  109 | prashanth | prash23@gmail.com | analyst           | 987980988 |   23 | 1997-09-05 | 2019-02-08 | 320000 |     20 | o+         |     20 | Research  | Pune      |
+|  110 | jinni     | jinny@gmail.com   | tester            | 887980988 |   26 | 1995-09-05 | 2019-02-08 | 380000 |     20 | o+         |     20 | Research  | Pune      |
+|  111 | karan     | karan@gmail.com   | salesman          | 889980988 |   20 | 1999-09-05 | 2019-06-08 | 300000 |     20 | b+         |     20 | Research  | Pune      |
+|  112 | finny     | finny@gmail.com   | softdevloper      | 889986788 |   21 | 1999-04-05 | 2019-05-08 | 340000 |     20 | b+         |     20 | Research  | Pune      |
+|  113 | anjali    | anji@gmail.com    | software engineer | 989986658 |   24 | 1993-03-05 | 2019-08-08 | 350000 |     10 | a+         |     10 | Account   | Bangalore |
+|  114 | aishu     | aish@gmail.com    | clerk             | 989986458 |   22 | 1993-04-05 | 2019-08-08 | 350000 |     20 | a+         |     20 | Research  | Pune      |
+|  115 | sriya     | sri12@gmail.com   | hr                | 985686458 |   22 | 1996-02-04 | 2019-07-08 | 320000 |     10 | a+         |     10 | Account   | Bangalore |
+| NULL | deepu     | NULL              | NULL              |      NULL | NULL | 1997-10-10 | NULL       |   NULL |   NULL | NULL       |   NULL | NULL      | NULL      |
++------+-----------+-------------------+-------------------+-----------+------+------------+------------+--------+--------+------------+--------+-----------+-----------+
+102)Right Outer Join
+select * from employee_info right outer join department_info on employee_info.deptId= department_info.deptId;
+103) Full outer join 
+
+Rollback n commit 
+mysql> select * from department_info;
++--------+-------------+-----------+
+| deptId | dname       | location  |
++--------+-------------+-----------+
+|     10 | Account     | Bangalore |
+|     20 | Research    | Pune      |
+|     30 | Sales       | New Delhi |
+|     40 | Operation   | Chennai   |
+|     50 | Admin       | Mumbai    |
+|     60 | Maintenance | Goa       |
++--------+-------------+-----------+
+6 rows in set (0.00 sec)
+
+mysql> insert into department_info values(55 , 'tester', 'pat');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> select * from department_info;
++--------+-------------+-----------+
+| deptId | dname       | location  |
++--------+-------------+-----------+
+|     10 | Account     | Bangalore |
+|     20 | Research    | Pune      |
+|     30 | Sales       | New Delhi |
+|     40 | Operation   | Chennai   |
+|     50 | Admin       | Mumbai    |
+|     55 | tester      | pat       |
+|     60 | Maintenance | Goa       |
++--------+-------------+-----------+
+7 rows in set (0.00 sec)
+
+mysql> rollback ;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from department_info;
++--------+-------------+-----------+
+| deptId | dname       | location  |
++--------+-------------+-----------+
+|     10 | Account     | Bangalore |
+|     20 | Research    | Pune      |
+|     30 | Sales       | New Delhi |
+|     40 | Operation   | Chennai   |
+|     50 | Admin       | Mumbai    |
+|     55 | tester      | pat       |
+|     60 | Maintenance | Goa       |
++--------+-------------+-----------+
+7 rows in set (0.00 sec)
+
+mysql> set autocommit = 0;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> insert into department_info values(86 , 'developer', 'kerala');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from department_info;
++--------+-------------+-----------+
+| deptId | dname       | location  |
++--------+-------------+-----------+
+|     10 | Account     | Bangalore |
+|     20 | Research    | Pune      |
+|     30 | Sales       | New Delhi |
+|     40 | Operation   | Chennai   |
+|     50 | Admin       | Mumbai    |
+|     55 | tester      | pat       |
+|     60 | Maintenance | Goa       |
+|     86 | developer   | kerala    |
++--------+-------------+-----------+
+8 rows in set (0.00 sec)
+
+mysql> rollback;
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> select * from department_info;
++--------+-------------+-----------+
+| deptId | dname       | location  |
++--------+-------------+-----------+
+|     10 | Account     | Bangalore |
+|     20 | Research    | Pune      |
+|     30 | Sales       | New Delhi |
+|     40 | Operation   | Chennai   |
+|     50 | Admin       | Mumbai    |
+|     55 | tester      | pat       |
+|     60 | Maintenance | Goa       |
++--------+-------------+-----------+
+7 rows in set (0.00 sec)
+
+mysql> insert into department_info values(75 , 'tester', 'pat');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from department_info;
++--------+-------------+-----------+
+| deptId | dname       | location  |
++--------+-------------+-----------+
+|     10 | Account     | Bangalore |
+|     20 | Research    | Pune      |
+|     30 | Sales       | New Delhi |
+|     40 | Operation   | Chennai   |
+|     50 | Admin       | Mumbai    |
+|     55 | tester      | pat       |
+|     60 | Maintenance | Goa       |
+|     75 | tester      | pat       |
++--------+-------------+-----------+
+8 rows in set (0.00 sec)
+
+mysql> commit;
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> select * from department_info;
++--------+-------------+-----------+
+| deptId | dname       | location  |
++--------+-------------+-----------+
+|     10 | Account     | Bangalore |
+|     20 | Research    | Pune      |
+|     30 | Sales       | New Delhi |
+|     40 | Operation   | Chennai   |
+|     50 | Admin       | Mumbai    |
+|     55 | tester      | pat       |
+|     60 | Maintenance | Goa       |
+|     75 | tester      | pat       |
++--------+-------------+-----------+
+8 rows in set (0.00 sec)
+
+mysql> rollback;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from department_info;
++--------+-------------+-----------+
+| deptId | dname       | location  |
++--------+-------------+-----------+
+|     10 | Account     | Bangalore |
+|     20 | Research    | Pune      |
+|     30 | Sales       | New Delhi |
+|     40 | Operation   | Chennai   |
+|     50 | Admin       | Mumbai    |
+|     55 | tester      | pat       |
+|     60 | Maintenance | Goa       |
+|     75 | tester      | pat       |
++--------+-------------+-----------+
+8 rows in set (0.00 sec)
+
+Savepoint
+
+mysql> savepoint jenny;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> insert into department_info values(90, "financer" , "mum");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from department_info;
++--------+-------------+-----------+
+| deptId | dname       | location  |
++--------+-------------+-----------+
+|     10 | Account     | Bangalore |
+|     20 | Research    | Pune      |
+|     30 | Sales       | New Delhi |
+|     40 | Operation   | Chennai   |
+|     50 | Admin       | Mumbai    |
+|     55 | tester      | pat       |
+|     60 | Maintenance | Goa       |
+|     75 | tester      | pat       |
+|     90 | financer    | mum       |
++--------+-------------+-----------+
+9 rows in set (0.00 sec)
+
+mysql> rollback to jenny;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from department_info;
++--------+-------------+-----------+
+| deptId | dname       | location  |
++--------+-------------+-----------+
+|     10 | Account     | Bangalore |
+|     20 | Research    | Pune      |
+|     30 | Sales       | New Delhi |
+|     40 | Operation   | Chennai   |
+|     50 | Admin       | Mumbai    |
+|     55 | tester      | pat       |
+|     60 | Maintenance | Goa       |
+|     75 | tester      | pat       |
++--------+-------------+-----------+
+
+
+
